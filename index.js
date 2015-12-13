@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-head'
+  name: 'ember-cli-head',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };
