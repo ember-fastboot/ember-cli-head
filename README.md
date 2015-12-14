@@ -1,6 +1,8 @@
 # Ember-cli-head
 
-This README outlines the details of collaborating on this Ember addon.
+## WARNING
+
+This Addon is a WIP prototype.  It is not ready for use by anyone.
 
 ## Installation
 
