@@ -1,28 +1,98 @@
-# Ember-cli-head
+# Ember-cli-head [![Build Status](https://travis-ci.org/ronco/ember-cli-head.svg?branch=master)](https://travis-ci.org/ronco/ember-cli-head)
 
-## WARNING
+This addon adds easy population of head tags from your Ember code
+without any direct hacky dom manipulation.  This addon also provides
+[ember-cli-fastboot](https://github.com/tildeio/ember-cli-fastboot)
+compatability for generating head tags in server rendered apps.
 
-This Addon is a WIP prototype.  It is not ready for use by anyone.
+The hope is that Ember itself will provide a mechanism for populating
+head tags from your app at some time in the future.  Until then this
+addon provides that functionality.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+Install by running
 
-## Running
+```
+ember install ember-cli-head
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+## Usage
 
-## Running Tests
+#### Template
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+By installing this addon you will find a new template added to your
+app:
 
-## Building
+```
+app/templates/head.hbs
+```
 
-* `ember build`
+The contents of this template will be inserted into the `<head>`
+element of the page.
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+
+#### Service
+
+There will be a `model` in the rendering scope of this template.  This
+model is actually an alias for the `head-data` service.  You can set
+whatever data you want to be available in the template directly on
+that service.
+
+### Example
+
+#### Setting content data in route
+
+```javascript
+// app/routes/application.js
+
+import Ember from 'ember';
+
+const { set } = Ember;
+
+export default Ember.Route.extend({
+  // inject the head data service
+  headData: Ember.inject.service(),
+  afterModel() {
+    set(this, 'headData.title', 'Demo App');
+  }
+});
+```
+
+#### Using the service as model in head.hbs
+
+```javascript
+<meta property="og:title" content={{model.title}} />
+```
+
+#### Resulting head
+
+This will result in a document along the lines of:
+
+```html
+<html data-ember-extension="1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Ember App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/">
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/my-app.css">
+    
+    <meta property="og:title" content="Demo App">
+  </head>
+  <body class="ember-application">
+    
+
+    <script src="assets/vendor.js"></script>
+    <script src="assets/my-app.js"></script>
+    <div id="ember383" class="ember-view"><h2 id="title">Welcome to Ember</h2>
+
+    </div>
+  </body>
+</html>
+```
