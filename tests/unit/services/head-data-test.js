@@ -7,6 +7,7 @@ moduleFor('service:head-data', 'Unit | Service | head data', {
 
 // Replace this with your real tests.
 test('it exists', function(assert) {
+  // just test that it's available
   let service = this.subject();
   assert.ok(service);
 });
