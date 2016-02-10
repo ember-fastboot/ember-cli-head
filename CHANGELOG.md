@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.0.1](https://github.com/ronco/ember-cli-head/tree/0.0.1) (2016-02-09)
+## [0.0.3](https://github.com/ronco/ember-cli-head/tree/0.0.3) (2016-02-09)
 **Merged pull requests:**
 
 - Fastboot compatibility [\#1](https://github.com/ronco/ember-cli-head/pull/1) ([ronco](https://github.com/ronco))
