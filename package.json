@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-head",
   "version": "0.0.2",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An addon to easily set document head content via a template.",
   "main": "index.js",
   "directories": {
     "doc": "doc",
