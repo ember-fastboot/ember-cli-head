@@ -7,9 +7,9 @@ export function initialize(instance) {
     .addBack()
     .remove();
   const container = instance.lookup ? instance : instance.container;
-  const renderer = container.lookup('renderer:-dom');
+  // const renderer = container.lookup('renderer:-dom');
   const component = container.lookup('component:head-layout');
-  component.appendTo(renderer._dom.document.head);
+  component.appendTo(document.head);
 }
 
 export default {

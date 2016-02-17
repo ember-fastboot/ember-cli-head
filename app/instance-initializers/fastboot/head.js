@@ -1,6 +1,5 @@
 export function initialize(instance) {
-  const container = instance.lookup ? instance : instance.container;
-  const renderer = container.lookup('renderer:-dom');
+  const renderer = instance.lookup('renderer:-dom');
   const componentFactory =
           instance._lookupFactory('component:head-layout');
   // explicitly set renderer & domhelper since we're in fastboot
