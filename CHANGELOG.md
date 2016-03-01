@@ -1,6 +1,13 @@
 # Change Log
 
-## [0.0.3](https://github.com/ronco/ember-cli-head/tree/0.0.3) (2016-02-09)
+## [0.0.4](https://github.com/ronco/ember-cli-head/tree/0.0.4) (2016-03-01)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.3...0.0.4)
+
+**Merged pull requests:**
+
+- Clear fast boot rendered head on browser boot [\#2](https://github.com/ronco/ember-cli-head/pull/2) ([ronco](https://github.com/ronco))
+
+## [0.0.3](https://github.com/ronco/ember-cli-head/tree/0.0.3) (2016-02-10)
 **Merged pull requests:**
 
 - Fastboot compatibility [\#1](https://github.com/ronco/ember-cli-head/pull/1) ([ronco](https://github.com/ronco))
