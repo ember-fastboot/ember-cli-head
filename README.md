@@ -96,3 +96,21 @@ This will result in a document along the lines of:
   </body>
 </html>
 ```
+
+### Fastboot Only
+
+The primary need for this library is to support various bots and web crawlers.  To that end the head content is only truly needed in a server rendered (ie FastBoot) environment.  However by default the library will keep the head content in sync with any transitions/data changes that occur in your Ember App while running in the browser.  This can be useful for development and/or debugging.
+
+If you do not wish to have the head content "live" while running in browser you can restrict this library to work only in FastBoot by adding the following to your `config/environment.js`:
+
+```javascript
+module.exports = function(environment) {
+  var ENV = {
+    'ember-cli-head': {
+        suppressBrowserRender: true
+    }
+  };
+}
+```
+
+If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
