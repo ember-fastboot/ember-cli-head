@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.0.5](https://github.com/ronco/ember-cli-head/tree/0.0.5) (2016-03-17)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.4...0.0.5)
+
+**Merged pull requests:**
+
+- added option to suppress browser rendering for fastboot [\#4](https://github.com/ronco/ember-cli-head/pull/4) ([habdelra](https://github.com/habdelra))
+
 ## [0.0.4](https://github.com/ronco/ember-cli-head/tree/0.0.4) (2016-03-01)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.3...0.0.4)
 
