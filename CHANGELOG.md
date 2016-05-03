@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.6](https://github.com/ronco/ember-cli-head/tree/0.0.6) (2016-05-03)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.5...0.0.6)
+
+**Closed issues:**
+
+- head inside head [\#3](https://github.com/ronco/ember-cli-head/issues/3)
+
+**Merged pull requests:**
+
+- Remove harding of isDevelopingAddon. [\#5](https://github.com/ronco/ember-cli-head/pull/5) ([rwjblue](https://github.com/rwjblue))
+
 ## [0.0.5](https://github.com/ronco/ember-cli-head/tree/0.0.5) (2016-03-17)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.4...0.0.5)
 
