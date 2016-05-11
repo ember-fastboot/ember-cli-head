@@ -1,7 +1,7 @@
 # Change Log
 
-## [0.0.6](https://github.com/ronco/ember-cli-head/tree/0.0.6) (2016-05-03)
-[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.5...0.0.6)
+## [0.0.7](https://github.com/ronco/ember-cli-head/tree/0.0.7) (2016-05-11)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.5...0.0.7)
 
 **Closed issues:**
 
@@ -9,6 +9,7 @@
 
 **Merged pull requests:**
 
+- Remove HTML Comments from head template. [\#6](https://github.com/ronco/ember-cli-head/pull/6) ([rwjblue](https://github.com/rwjblue))
 - Remove harding of isDevelopingAddon. [\#5](https://github.com/ronco/ember-cli-head/pull/5) ([rwjblue](https://github.com/rwjblue))
 
 ## [0.0.5](https://github.com/ronco/ember-cli-head/tree/0.0.5) (2016-03-17)
