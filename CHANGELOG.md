@@ -1,14 +1,17 @@
 # Change Log
 
-## [0.0.7](https://github.com/ronco/ember-cli-head/tree/0.0.7) (2016-05-11)
-[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.5...0.0.7)
+## [0.1.0](https://github.com/ronco/ember-cli-head/tree/0.1.0) (2016-06-13)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.5...0.1.0)
 
 **Closed issues:**
 
+- Handle lack of `app/templates/head.hbs` more gracefully. [\#7](https://github.com/ronco/ember-cli-head/issues/7)
 - head inside head [\#3](https://github.com/ronco/ember-cli-head/issues/3)
 
 **Merged pull requests:**
 
+- include a default head template in app [\#9](https://github.com/ronco/ember-cli-head/pull/9) ([ronco](https://github.com/ronco))
+- remove unneeded slash on meta elements per HTML5 and ember-cli-template-lint [\#8](https://github.com/ronco/ember-cli-head/pull/8) ([openhouse](https://github.com/openhouse))
 - Remove HTML Comments from head template. [\#6](https://github.com/ronco/ember-cli-head/pull/6) ([rwjblue](https://github.com/rwjblue))
 - Remove harding of isDevelopingAddon. [\#5](https://github.com/ronco/ember-cli-head/pull/5) ([rwjblue](https://github.com/rwjblue))
 
