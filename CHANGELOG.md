@@ -1,35 +1,67 @@
 # Change Log
 
-## [0.1.0](https://github.com/ronco/ember-cli-head/tree/0.1.0) (2016-06-13)
-[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.5...0.1.0)
+## [v0.1.1](https://github.com/ronco/ember-cli-head/tree/v0.1.1) (2016-09-08)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.0...v0.1.1)
+
+**Closed issues:**
+
+- ember-alpha support [\#10](https://github.com/ronco/ember-cli-head/issues/10)
+
+**Merged pull requests:**
+
+- Enable usage in Ember 2.9 beta and above. [\#11](https://github.com/ronco/ember-cli-head/pull/11) ([rwjblue](https://github.com/rwjblue))
+
+## [v0.1.0](https://github.com/ronco/ember-cli-head/tree/v0.1.0) (2016-06-14)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.7...v0.1.0)
 
 **Closed issues:**
 
 - Handle lack of `app/templates/head.hbs` more gracefully. [\#7](https://github.com/ronco/ember-cli-head/issues/7)
-- head inside head [\#3](https://github.com/ronco/ember-cli-head/issues/3)
 
 **Merged pull requests:**
 
 - include a default head template in app [\#9](https://github.com/ronco/ember-cli-head/pull/9) ([ronco](https://github.com/ronco))
 - remove unneeded slash on meta elements per HTML5 and ember-cli-template-lint [\#8](https://github.com/ronco/ember-cli-head/pull/8) ([openhouse](https://github.com/openhouse))
+
+## [v0.0.7](https://github.com/ronco/ember-cli-head/tree/v0.0.7) (2016-05-11)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.6...v0.0.7)
+
+**Merged pull requests:**
+
 - Remove HTML Comments from head template. [\#6](https://github.com/ronco/ember-cli-head/pull/6) ([rwjblue](https://github.com/rwjblue))
+
+## [v0.0.6](https://github.com/ronco/ember-cli-head/tree/v0.0.6) (2016-05-03)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.5...v0.0.6)
+
+**Closed issues:**
+
+- head inside head [\#3](https://github.com/ronco/ember-cli-head/issues/3)
+
+**Merged pull requests:**
+
 - Remove harding of isDevelopingAddon. [\#5](https://github.com/ronco/ember-cli-head/pull/5) ([rwjblue](https://github.com/rwjblue))
 
-## [0.0.5](https://github.com/ronco/ember-cli-head/tree/0.0.5) (2016-03-17)
-[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.4...0.0.5)
+## [v0.0.5](https://github.com/ronco/ember-cli-head/tree/v0.0.5) (2016-03-17)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.4...v0.0.5)
 
 **Merged pull requests:**
 
 - added option to suppress browser rendering for fastboot [\#4](https://github.com/ronco/ember-cli-head/pull/4) ([habdelra](https://github.com/habdelra))
 
-## [0.0.4](https://github.com/ronco/ember-cli-head/tree/0.0.4) (2016-03-01)
-[Full Changelog](https://github.com/ronco/ember-cli-head/compare/0.0.3...0.0.4)
+## [v0.0.4](https://github.com/ronco/ember-cli-head/tree/v0.0.4) (2016-03-01)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.3...v0.0.4)
 
 **Merged pull requests:**
 
 - Clear fast boot rendered head on browser boot [\#2](https://github.com/ronco/ember-cli-head/pull/2) ([ronco](https://github.com/ronco))
 
-## [0.0.3](https://github.com/ronco/ember-cli-head/tree/0.0.3) (2016-02-10)
+## [v0.0.3](https://github.com/ronco/ember-cli-head/tree/v0.0.3) (2016-02-10)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.2...v0.0.3)
+
+## [v0.0.2](https://github.com/ronco/ember-cli-head/tree/v0.0.2) (2016-02-10)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.0.1...v0.0.2)
+
+## [v0.0.1](https://github.com/ronco/ember-cli-head/tree/v0.0.1) (2016-02-10)
 **Merged pull requests:**
 
 - Fastboot compatibility [\#1](https://github.com/ronco/ember-cli-head/pull/1) ([ronco](https://github.com/ronco))
