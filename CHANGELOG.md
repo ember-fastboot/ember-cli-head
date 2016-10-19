@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.1.2](https://github.com/ronco/ember-cli-head/tree/v0.1.2) (2016-10-19)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.1...v0.1.2)
+
+**Merged pull requests:**
+
+- Account for 2.9.0 not including Glimmer 2. [\#13](https://github.com/ronco/ember-cli-head/pull/13) ([rwjblue](https://github.com/rwjblue))
+
 ## [v0.1.1](https://github.com/ronco/ember-cli-head/tree/v0.1.1) (2016-09-08)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.0...v0.1.1)
 
