@@ -17,7 +17,7 @@ module.exports = {
 
     // 2.9.0-beta.1 - 2.9.0-beta.5 used glimmer2 (but 2.9.0 did not)
     // 2.10.0-beta.1+ includes glimmer2
-    if ((emberVersion.gt('2.9.0-beta') && emberVersion.lt('2.9.0')) || emberVersion.gt('2.10.0-beta')) {
+    if (!(emberVersion.gt('2.9.0-beta') && emberVersion.lt('2.9.0')) && !emberVersion.gt('2.10.0-beta')) {
       trees.push(this.treeGenerator(path.resolve(this.root, 'app-lt-2-10')));
     }
 
