@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.1.3](https://github.com/ronco/ember-cli-head/tree/v0.1.3) (2016-11-09)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.2...v0.1.3)
+
+**Merged pull requests:**
+
+- \[fix\] Correct logic for pushing app-lt-2-10 tree [\#14](https://github.com/ronco/ember-cli-head/pull/14) ([arjansingh](https://github.com/arjansingh))
+
 ## [v0.1.2](https://github.com/ronco/ember-cli-head/tree/v0.1.2) (2016-10-19)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.1...v0.1.2)
 
