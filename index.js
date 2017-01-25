@@ -11,7 +11,11 @@ module.exports = {
 
   treeForApp: function(defaultTree) {
     var checker = new VersionChecker(this);
-    var emberVersion = checker.for('ember', 'bower');
+    var emberVersion = checker.for('ember-source', 'npm');
+
+    if (!emberVersion.version) {
+      emberVersion = checker.for('ember', 'bower');
+    }
 
     var trees = [defaultTree];
 
