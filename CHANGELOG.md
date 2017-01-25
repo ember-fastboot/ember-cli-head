@@ -1,6 +1,13 @@
 # Change Log
 
-## [v0.1.3](https://github.com/ronco/ember-cli-head/tree/v0.1.3) (2016-11-09)
+## [v0.1.4](https://github.com/ronco/ember-cli-head/tree/v0.1.4) (2017-01-25)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.3...v0.1.4)
+
+**Merged pull requests:**
+
+- Check ember-source version from NPM, if not found use ember from bower [\#19](https://github.com/ronco/ember-cli-head/pull/19) ([josemarluedke](https://github.com/josemarluedke))
+
+## [v0.1.3](https://github.com/ronco/ember-cli-head/tree/v0.1.3) (2016-11-10)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.2...v0.1.3)
 
 **Merged pull requests:**
