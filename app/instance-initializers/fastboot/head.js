@@ -7,5 +7,9 @@ export function initialize(owner) {
 
 export default {
   name: 'head-fastboot',
-  initialize: initialize
+  initialize() {
+    if (typeof FastBoot !== 'undefined') {
+      initialize(...arguments);
+    }
+  }
 };
