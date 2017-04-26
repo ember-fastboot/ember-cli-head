@@ -16,6 +16,8 @@ env:
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
   - EMBER_TRY_SCENARIO=ember-default
+  - EMBER_TRY_SCENARIO=fastboot
+  - EMBER_TRY_SCENARIO=fastboot-ember-2.9
 
 matrix:
   fast_finish: true

@@ -86,6 +86,24 @@ module.exports = {
       npm: {
         devDependencies: {}
       }
+    },
+    {
+      name: 'fastboot',
+      command: 'ember fastboot:test',
+      npm: {
+        devDependencies: {
+          'ember-source': null
+        }
+      }
+    },
+    {
+      name: 'fastboot-ember-2.9',
+      command: 'ember fastboot:test --ember-version 2.9.0',
+      npm: {
+        devDependencies: {
+          'ember-source': null
+        }
+      }
     }
   ]
 };
