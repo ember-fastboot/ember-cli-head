@@ -27,9 +27,10 @@ matrix:
 before_install:
   - npm config set spin false
   - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn global add phantomjs-prebuilt
+  - yarn global add phantomjs-prebuilt bower
   - npm --version
   - yarn --version
+  - bower --version
   - phantomjs --version
 
 install:

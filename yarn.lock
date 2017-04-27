@@ -2173,9 +2173,9 @@ ember-export-application-global@^1.0.5:
   dependencies:
     ember-cli-babel "^5.1.10"
 
-ember-fastboot-addon-tests@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/ember-fastboot-addon-tests/-/ember-fastboot-addon-tests-0.3.1.tgz#2aba4eb043d6b61aa3bc629894d4898998749f44"
+ember-fastboot-addon-tests@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ember-fastboot-addon-tests/-/ember-fastboot-addon-tests-0.3.2.tgz#832c13eaa9c1d73bc1db1a4a6dd6d73c099c97f1"
   dependencies:
     chalk "^1.1.3"
     core-object "^2.0.6"
