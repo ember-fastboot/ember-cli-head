@@ -27,6 +27,10 @@ module.exports = {
 
     var tree = mergeTrees(trees, { overwrite: true });
 
-    return filterInitializers(tree);
+    return mergeTrees(trees, { overwrite: true });
+  },
+
+  preconcatTree: function(tree) {
+    return filterInitializers(tree, this.app.name);
   }
 };
