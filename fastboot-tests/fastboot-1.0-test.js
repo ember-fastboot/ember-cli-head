@@ -5,9 +5,7 @@ const setupTest = require('ember-fastboot-addon-tests').setupTest;
 
 describe('FastBoot 1.0', function() {
   setupTest('fastboot', {
-    // @todo remove this line once ember-cli-fastboot 1.0 is released.
-    // For now we reference the fork of https://github.com/ember-fastboot/ember-cli-fastboot/pull/369
-    emberCliFastbootVersion: 'kratiahuja/ember-cli-fastboot#build-test'
+    emberCliFastbootVersion: 'ember-fastboot/ember-cli-fastboot#master'
   });
 
   it('index page', function() {
