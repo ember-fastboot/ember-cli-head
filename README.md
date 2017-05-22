@@ -82,11 +82,11 @@ This will result in a document along the lines of:
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/my-app.css">
-    
+
     <meta property="og:title" content="Demo App">
   </head>
   <body class="ember-application">
-    
+
 
     <script src="assets/vendor.js"></script>
     <script src="assets/my-app.js"></script>
@@ -96,6 +96,8 @@ This will result in a document along the lines of:
   </body>
 </html>
 ```
+
+
 
 ### Fastboot Only
 
@@ -114,3 +116,18 @@ module.exports = function(environment) {
 ```
 
 If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
+
+### Suppress Clearing Fastbooted Head
+As noted above, by default, this library will remove the server rendered head content. However, if you are injecting model/route specific css (i.e. a customer specific theme) into the head, having that removed when the Ember app boots in the browser will cause your page to lose it's styling.
+
+This behavior can be suppressed by adding the following to your `config/environment.js`:
+
+```javascript
+module.exports = function(environment) {
+  var ENV = {
+    'ember-cli-head': {
+        suppressClearFastbootedHead: true
+    }
+  };
+}
+```
