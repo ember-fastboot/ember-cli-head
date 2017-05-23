@@ -5,7 +5,7 @@ const setupTest = require('ember-fastboot-addon-tests').setupTest;
 
 describe('FastBoot 1.0', function() {
   setupTest('fastboot', {
-    emberCliFastbootVersion: 'ember-fastboot/ember-cli-fastboot#master'
+    emberCliFastbootVersion: '1.0.0-rc.1'
   });
 
   it('index page', function() {
