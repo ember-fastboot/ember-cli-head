@@ -22,7 +22,12 @@ module.exports = {
 
       return filterInitializers(tree);
     } else {
-      return defaultTree;
+      let trees = [defaultTree];
+      if (!this.hasGlimmer2()) {
+        trees.push(this.treeGenerator(path.resolve(this.root, 'app-lt-2-10')));
+      }
+
+      return mergeTrees(trees, { overwrite: true });
     }
   },
 
