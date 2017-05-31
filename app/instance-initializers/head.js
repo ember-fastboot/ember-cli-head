@@ -6,7 +6,7 @@ export function initialize(owner) {
   // clear fast booted head (if any)
   let startMeta = document.querySelector('meta[name="ember-cli-head-start"]')
   let endMeta = document.querySelector('meta[name="ember-cli-head-end"]')
-  if (startMeta && startMeta) {
+  if (startMeta && endMeta) {
     let el = startMeta.nextSibling
     while(el && el !== endMeta) {
       document.head.removeChild(el);
