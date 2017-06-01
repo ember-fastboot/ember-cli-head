@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from '../../config/environment';
+import ENV from '../config/environment';
 
 export function initialize(owner) {
   if (ENV['ember-cli-head'] && ENV['ember-cli-head']['suppressBrowserRender']) { return true; }
@@ -16,5 +16,9 @@ export function initialize(owner) {
 
 export default {
   name: 'head-browser',
-  initialize: initialize
+  initialize() {
+    if (typeof FastBoot === 'undefined') {
+      initialize(...arguments);
+    }
+  }
 };

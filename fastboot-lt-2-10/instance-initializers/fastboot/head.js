@@ -15,5 +15,5 @@ export function initialize(instance) {
 
 export default {
   name: 'head-fastboot',
-  initialize: initialize
+  initialize
 };

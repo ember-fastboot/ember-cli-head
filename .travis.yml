@@ -16,6 +16,8 @@ env:
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
   - EMBER_TRY_SCENARIO=ember-default
+  - EMBER_TRY_SCENARIO=fastboot
+  - EMBER_TRY_SCENARIO=fastboot-ember-2.9
 
 matrix:
   fast_finish: true
@@ -25,9 +27,10 @@ matrix:
 before_install:
   - npm config set spin false
   - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn global add phantomjs-prebuilt
+  - yarn global add phantomjs-prebuilt bower
   - npm --version
   - yarn --version
+  - bower --version
   - phantomjs --version
 
 install:

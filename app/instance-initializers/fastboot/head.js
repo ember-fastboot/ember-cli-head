@@ -7,5 +7,5 @@ export function initialize(owner) {
 
 export default {
   name: 'head-fastboot',
-  initialize: initialize
+  initialize
 };
