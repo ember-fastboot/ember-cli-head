@@ -5,12 +5,15 @@ const path = require('path');
 const filterInitializers = require('fastboot-filter-initializers');
 const VersionChecker = require('ember-cli-version-checker');
 const mergeTrees = require('broccoli-merge-trees');
+const semver = require('semver');
 
 module.exports = {
   name: 'ember-cli-head',
 
   treeForApp(defaultTree) {
-    if (!process.env.FASTBOOT_NEW_BUILD) {
+    let fastboot = this.project.findAddonByName('ember-cli-fastboot');
+
+    if (fastboot && semver.lte(fastboot.pkg.version, '1.0.0-rc.1')) {
       let trees = [defaultTree];
 
       if (!this.hasGlimmer2()) {
