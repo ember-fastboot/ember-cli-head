@@ -17,6 +17,10 @@ Install by running
 ember install ember-cli-head
 ```
 
+#### Version
+Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
+Please use 0.2.X if you don't fulfull both requirements.
+
 ## Usage
 
 #### Template
@@ -82,11 +86,11 @@ This will result in a document along the lines of:
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/my-app.css">
-    
+
     <meta property="og:title" content="Demo App">
   </head>
   <body class="ember-application">
-    
+
 
     <script src="assets/vendor.js"></script>
     <script src="assets/my-app.js"></script>

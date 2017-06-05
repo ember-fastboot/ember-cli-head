@@ -47,11 +47,8 @@
     "ember-addon"
   ],
   "dependencies": {
-    "broccoli-merge-trees": "^1.1.4",
-    "ember-cli-babel": "^6.0.0",
-    "ember-cli-htmlbars": "^1.3.0",
-    "ember-cli-version-checker": "^1.1.6",
-    "fastboot-filter-initializers": "^0.0.2"
+    "ember-cli-babel": "^6.1.0",
+    "ember-cli-htmlbars": "^2.0.1"
   },
   "engines": {
     "node": ">= 4"
