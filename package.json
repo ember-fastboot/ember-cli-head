@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-head",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "An addon to easily set document head content via a template.",
   "main": "index.js",
   "directories": {
