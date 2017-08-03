@@ -6,10 +6,11 @@ moduleForComponent('head-layout', 'Integration | Component | head layout', {
 });
 
 test('it renders', function(assert) {
+  let fragment = document.createDocumentFragment();
+  this.set('stuff', fragment);
+  this.render(hbs`{{head-layout headElement=stuff}}`);
 
-  this.render(hbs`{{head-layout}}`);
-
-  assert.equal(this.$('meta[name="ember-cli-head-start"]').length, 1);
-  assert.equal(this.$('meta[name="ember-cli-head-end"]').length, 1);
+  assert.equal(fragment.querySelectorAll('meta[name="ember-cli-head-start"]').length, 1);
+  assert.equal(fragment.querySelectorAll('meta[name="ember-cli-head-end"]').length, 1);
 
 });
