@@ -17,6 +17,8 @@ Install by running
 ember install ember-cli-head
 ```
 
+And add `{{head-layout}}` to the top of your application template.
+
 #### Version
 Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
 Please use 0.2.X if you don't fulfull both requirements.
