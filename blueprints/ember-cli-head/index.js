@@ -17,7 +17,7 @@ module.exports = {
     } else {
       let str = `You must add {{head-layout}} component to your topmost UI.
 This is usually your app/templates/application.hbs, but was not found on your system.
-Please see the README for more instructions https://github.com/ronco/ember-cli-head.`
+Please see the README for more instructions https://github.com/ronco/ember-cli-head#upgrade-to-04x.`
 
       this.ui.writeLine(chalk.yellow(str));
     }
