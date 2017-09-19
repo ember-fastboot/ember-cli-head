@@ -17,6 +17,8 @@ Install by running
 ember install ember-cli-head
 ```
 
+And add `{{head-layout}}` to the top of your application template.
+
 #### Version
 Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
 Please use 0.2.X if you don't fulfull both requirements.
@@ -116,5 +118,13 @@ module.exports = function(environment) {
   };
 }
 ```
+
+### Upgrade to 0.4.x
+
+As mentioned above you need to add the `{{head-layout}}` component once and only once in an application wide template.  This template is usually `app/templates/application.hbs`, but could be different in your case.  Previously, in ember-cli-head 0.3.x and below the component was appended to the document inside an instance initializer.  This prevented the need for the `{{head-layout}}` component as it was automatically injected and used inside that initializer.  Unfortunately, this approach needed to change so that we could render the component with the rest of the application rendering.
+
+If you care to read more about the details of render please see the PR that introduced these changes https://github.com/ronco/ember-cli-head/pull/37
+
+But for now, if you are upgrading to 0.4.x, you simply need to add `{{head-layout}}` component to your application wide template.
 
 If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.

@@ -1,6 +1,6 @@
 import ENV from '../config/environment';
 
-export function initialize(owner) {
+export function initialize() {
   if (ENV['ember-cli-head'] && ENV['ember-cli-head']['suppressBrowserRender']) { return true; }
 
   // clear fast booted head (if any)
@@ -15,9 +15,6 @@ export function initialize(owner) {
     document.head.removeChild(startMeta);
     document.head.removeChild(endMeta);
   }
-
-  const component = owner.lookup('component:head-layout');
-  component.appendTo(document.head);
 }
 
 export default {
