@@ -1,5 +1,23 @@
 # Change Log
 
+## [v0.4.1](https://github.com/ronco/ember-cli-head/tree/v0.4.1) (2018-05-07)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.4.0...v0.4.1)
+
+**Closed issues:**
+
+- Meta elements "ember-cli-head-start" and "ember-cli-head-end" missing "content" attribute [\#47](https://github.com/ronco/ember-cli-head/issues/47)
+- Does this repo really only work with Fastboot now? [\#46](https://github.com/ronco/ember-cli-head/issues/46)
+- When loading page you get no title while the application renders [\#43](https://github.com/ronco/ember-cli-head/issues/43)
+- Make FastBoot DOM smashing opt-in [\#41](https://github.com/ronco/ember-cli-head/issues/41)
+- 0.4.0 made all my head data stop working [\#40](https://github.com/ronco/ember-cli-head/issues/40)
+- rootURL favicon link difficulties \(not using fastboot\) [\#39](https://github.com/ronco/ember-cli-head/issues/39)
+
+**Merged pull requests:**
+
+- Added empty content attribute to meta tags [\#50](https://github.com/ronco/ember-cli-head/pull/50) ([samcic](https://github.com/samcic))
+- Avoid issues with Chrome suid on CI. [\#49](https://github.com/ronco/ember-cli-head/pull/49) ([rwjblue](https://github.com/rwjblue))
+- Refactor instance-initializer [\#45](https://github.com/ronco/ember-cli-head/pull/45) ([mydea](https://github.com/mydea))
+
 ## [v0.4.0](https://github.com/ronco/ember-cli-head/tree/v0.4.0) (2017-09-21)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.3.1...v0.4.0)
 
