@@ -1,5 +1,6 @@
 # unconventional js
-/blueprints/*/files/
+/blueprints/*
+/fastboot-tests/fastboot-1.0-test.js
 /vendor/
 
 # compiled output

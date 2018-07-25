@@ -55,7 +55,7 @@
     "ember-cli-htmlbars": "^2.0.3"
   },
   "engines": {
-    "node": ">= 4"
+    "node": ">= 6"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
