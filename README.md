@@ -52,13 +52,12 @@ that service.
 ```javascript
 // app/routes/application.js
 
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
 
-const { set } = Ember;
 
 export default Ember.Route.extend({
   // inject the head data service
-  headData: Ember.inject.service(),
+  headData: service(),
   afterModel() {
     set(this, 'headData.title', 'Demo App');
   }
