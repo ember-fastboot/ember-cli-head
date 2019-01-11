@@ -1,8 +1,6 @@
 # unconventional js
 /blueprints/*/files/
 /vendor/
-/fastboot-tests/fastboot-1.0-test.js
-/blueprints/ember-cli-head/index.js
 
 # compiled output
 /dist/
@@ -14,6 +12,7 @@
 
 # misc
 /coverage/
+!.*
 
 # ember-try
 /.node_modules.ember-try/
