@@ -1,4 +1,5 @@
-/*jshint node:true*/
+/* eslint-env node */
+
 let fs = require('fs');
 let path = require('path');
 let chalk = require('chalk');

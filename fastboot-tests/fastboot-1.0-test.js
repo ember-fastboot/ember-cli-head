@@ -1,11 +1,12 @@
+/* eslint-env node */
 'use strict';
 
 const expect = require('chai').expect;
 const setupTest = require('ember-fastboot-addon-tests').setupTest;
 
-describe('FastBoot 1.0', function() {
+describe('FastBoot 2.0', function() {
   setupTest('fastboot', {
-    emberCliFastbootVersion: '1.0.0-rc.1'
+    emberCliFastbootVersion: '2.0.0'
   });
 
   it('index page', function() {
