@@ -128,3 +128,7 @@ If you care to read more about the details of render please see the PR that intr
 But for now, if you are upgrading to 0.4.x, you simply need to add `{{head-layout}}` component to your application wide template.
 
 If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
+
+### Twitter, LinkedIn, and FastBoot
+
+As of 2019-06-06, Twitter and LinkedIn's scrapers have a hard time extracting your site's metadata for sharing if `chunkedResponse` is set to `true` on your [Fastboot app server](https://github.com/ember-fastboot/fastboot-app-server). Set `chunkedResponse: false` if your meta tags are in place but the [Twitter card validator](https://cards-dev.twitter.com/validator) shows "Card not found" or [LinkedIn's Post Inspector](https://www.linkedin.com/post-inspector/) shows a 500 error.
