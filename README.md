@@ -1,9 +1,9 @@
-# Ember-cli-head [![Build Status](https://travis-ci.org/ronco/ember-cli-head.svg?branch=master)](https://travis-ci.org/ronco/ember-cli-head)
+# ember-cli-head [![Build Status](https://travis-ci.org/ronco/ember-cli-head.svg?branch=master)](https://travis-ci.org/ronco/ember-cli-head)
 
 This addon adds easy population of head tags from your Ember code
-without any direct hacky dom manipulation.  This addon also provides
+without any direct hacky DOM manipulation.  This addon also provides
 [ember-cli-fastboot](https://github.com/tildeio/ember-cli-fastboot)
-compatability for generating head tags in server rendered apps.
+compatibility for generating head tags in server-rendered apps.
 
 The hope is that Ember itself will provide a mechanism for populating
 head tags from your app at some time in the future.  Until then this
@@ -21,7 +21,7 @@ And add `{{head-layout}}` to the top of your application template.
 
 #### Version
 Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
-Please use 0.2.X if you don't fulfull both requirements.
+Please use 0.2.X if you don't fulfill both requirements.
 
 ## Usage
 
@@ -105,9 +105,9 @@ This will result in a document along the lines of:
 
 ### Fastboot Only
 
-The primary need for this library is to support various bots and web crawlers.  To that end the head content is only truly needed in a server rendered (ie FastBoot) environment.  However by default the library will keep the head content in sync with any transitions/data changes that occur in your Ember App while running in the browser.  This can be useful for development and/or debugging.
+The primary need for this library is to support various bots and web crawlers.  To that end the head content is only truly needed in a server rendered (i.e. FastBoot) environment.  However, by default the library will keep the head content in sync with any transitions/data changes that occur in your Ember App while running in the browser.  This can be useful for development and/or debugging.
 
-If you do not wish to have the head content "live" while running in browser you can restrict this library to work only in FastBoot by adding the following to your `config/environment.js`:
+If you do not wish to have the head content "live" while running in browser you can restrict this library to only work in FastBoot by adding the following to your `config/environment.js`:
 
 ```javascript
 module.exports = function(environment) {
