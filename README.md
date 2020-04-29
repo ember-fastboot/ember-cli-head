@@ -9,6 +9,12 @@ The hope is that Ember itself will provide a mechanism for populating
 head tags from your app at some time in the future.  Until then this
 addon provides that functionality.
 
+## Compatibility
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
+
 ## Installation
 
 Install by running
@@ -128,3 +134,11 @@ If you care to read more about the details of render please see the PR that intr
 But for now, if you are upgrading to 0.4.x, you simply need to add `{{head-layout}}` component to your application wide template.
 
 If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).

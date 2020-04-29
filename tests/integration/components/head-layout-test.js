@@ -1,16 +1,18 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'ember-qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-moduleForComponent('head-layout', 'Integration | Component | head layout', {
-  integration: true
-});
+module('Integration | Component | head-layout', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  let fragment = document.createDocumentFragment();
-  this.set('stuff', fragment);
-  this.render(hbs`{{head-layout headElement=stuff}}`);
+  test('it renders', async function(assert) {
+    let fragment = document.createDocumentFragment();
+    this.set('stuff', fragment);
 
-  assert.equal(fragment.querySelectorAll('meta[name="ember-cli-head-start"]').length, 1);
-  assert.equal(fragment.querySelectorAll('meta[name="ember-cli-head-end"]').length, 1);
+    await render(hbs`{{head-layout headElement=this.stuff}}`);
 
+    assert.dom('meta[name="ember-cli-head-start"]', fragment).exists({ count: 1 });
+    assert.dom('meta[name="ember-cli-head-end"]', fragment).exists({ count: 1 });
+  });
 });

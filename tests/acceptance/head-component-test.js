@@ -8,11 +8,12 @@ module('Acceptance | head component', function(hooks) {
   test('has head-data service content', async function(assert) {
     await visit('/');
 
-    assert.equal(document.querySelector('head meta[property="og:title"]').getAttribute('content'), 'Hello page');
+    assert.dom('h1').hasText('Hello page');
+    assert.dom('head meta[property="og:title"]', document).hasAttribute('content', 'Hello page');
 
     await visit('/other-page');
 
-    assert.equal(document.querySelector('head meta[property="og:title"]').getAttribute('content'), 'Other page');
+    assert.dom('h1').hasText('Other page');
+    assert.dom('head meta[property="og:title"]', document).hasAttribute('content', 'Other page');
   });
 });
-
