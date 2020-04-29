@@ -22,7 +22,6 @@ jobs:
           - default
           - default-with-lockfile
           - default-with-jquery
-          - default-with-fastboot
           - release
           - beta
           - canary
@@ -52,13 +51,8 @@ jobs:
       - name: Lint (js)
         run: yarn lint:js
       - name: Build
-        if: matrix.scenario != 'default-with-fastboot'
         run: yarn ember build --environment test
       - name: Run test
-        if: matrix.scenario == 'default-with-fastboot'
-        run: yarn test:fastboot
-      - name: Run test
-        if: matrix.scenario != 'default-with-fastboot'
         # Due to a bug in ember-cli, running `ember test` with `--path` doesn't set `EMBER_ENV=test`
         # See https://github.com/ember-cli/ember-cli/issues/8922
         run: EMBER_ENV=test yarn test --path dist

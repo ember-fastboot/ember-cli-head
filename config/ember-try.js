@@ -100,13 +100,6 @@ module.exports = async function() {
         }
       },
       {
-        name: 'ember-default-with-fastboot',
-        command: 'ember fastboot:test',
-        npm: {
-          devDependencies: {}
-        }
-      },
-      {
         name: 'ember-classic',
         env: {
           EMBER_OPTIONAL_FEATURES: JSON.stringify({
