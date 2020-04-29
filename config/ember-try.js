@@ -79,7 +79,7 @@ module.exports = function() {
           }
         },
         {
-          name: 'fastboot',
+          name: 'ember-default-with-fastboot',
           command: 'ember fastboot:test',
           npm: {
             devDependencies: {}

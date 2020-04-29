@@ -19,6 +19,7 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
+    "test:fastboot": "ember fastboot:test",
     "test:all": "ember try:each"
   },
   "keywords": [

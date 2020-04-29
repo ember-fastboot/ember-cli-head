@@ -1,4 +1,4 @@
-# ember-cli-head [![Build Status](https://travis-ci.org/ronco/ember-cli-head.svg?branch=master)](https://travis-ci.org/ronco/ember-cli-head)
+# ember-cli-head [![Build Status](https://github.com/ronco/ember-cli-head/workflows/Build/badge.svg?branch=master)](https://github.com/ronco/ember-cli-head/actions?query=branch%3Amaster+workflow%3A%22Build%22)
 
 This addon adds easy population of head tags from your Ember code
 without any direct hacky DOM manipulation.  This addon also provides
