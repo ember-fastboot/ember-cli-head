@@ -1,11 +1,11 @@
 import Component from '@ember/component';
-import { get, computed } from '@ember/object';
-import { getOwner } from '@ember/application';
+import { inject as service } from '@ember/service';
 import layout from '../templates/components/head-layout';
 
 export default Component.extend({
   tagName: '',
   layout,
+  document: service('-document'),
 
   /**
    * If true, this will tear down any existing head on init of this component.
@@ -15,15 +15,20 @@ export default Component.extend({
    */
   shouldTearDownOnInit: true,
 
-  headElement: computed(function() {
-    let documentService = getOwner(this).lookup('service:-document');
-    return documentService.head;
-  }),
+  /**
+   * The element to render into. Defaults to <head> in `init`, overridable for our own tests only.
+   * @private
+   */
+  headElement: null,
 
   init() {
     this._super(...arguments);
 
-    if (get(this, 'shouldTearDownOnInit')) {
+    if (this.get('headElement') === null) {
+      this.set('headElement', this.get('document.head'));
+    }
+
+    if (this.get('shouldTearDownOnInit')) {
       this._tearDownHead();
     }
   },
@@ -38,6 +43,7 @@ export default Component.extend({
     }
 
     // clear fast booted head (if any)
+    let document = this.get('document');
     let startMeta = document.querySelector('meta[name="ember-cli-head-start"]');
     let endMeta = document.querySelector('meta[name="ember-cli-head-end"]');
     if (startMeta && endMeta) {

@@ -1,0 +1,58 @@
+name: Build
+on:
+  pull_request: {}
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    name: Test (${{ matrix.scenario }})
+    runs-on: ubuntu-latest
+    env:
+      CI: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - default
+          - default-with-lockfile
+          - default-with-jquery
+          - release
+          - beta
+          - canary
+          - lts-3.16
+          - lts-3.12
+          - lts-3.8
+          - lts-3.4
+          - lts-2.18
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Set up Volta
+        uses: volta-cli/action@v1
+      - name: Install dependencies (yarn)
+        if: matrix.scenario == 'default-with-lockfile'
+        run: yarn install --non-interactive --frozen-lockfile
+      - name: Install dependencies (yarn)
+        if: matrix.scenario != 'default-with-lockfile'
+        run: yarn install --non-interactive --no-lockfile
+      - name: Setup ember-try scenario
+        if: matrix.scenario != 'default' && matrix.scenario != 'default-with-lockfile'
+        run: >-
+          yarn ember try:one ember-${{ matrix.scenario }} --skip-cleanup ---
+          '[ -z "$EMBER_OPTIONAL_FEATURES" ] || echo "::set-env name=EMBER_OPTIONAL_FEATURES::$EMBER_OPTIONAL_FEATURES"'
+      - name: Lint (hbs)
+        run: yarn lint:hbs
+      - name: Lint (js)
+        run: yarn lint:js
+      - name: Build
+        run: yarn ember build --environment test
+      - name: Run test
+        # Due to a bug in ember-cli, running `ember test` with `--path` doesn't set `EMBER_ENV=test`
+        # See https://github.com/ember-cli/ember-cli/issues/8922
+        run: EMBER_ENV=test yarn test --path dist
