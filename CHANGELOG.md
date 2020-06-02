@@ -18,9 +18,6 @@
 - Robert Jackson ([@rwjblue](https://github.com/rwjblue))
 - Scott Newcomer ([@snewcomer](https://github.com/snewcomer))
 
-
-# Change Log
-
 ## [v0.4.1](https://github.com/ronco/ember-cli-head/tree/v0.4.1) (2018-05-07)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.4.0...v0.4.1)
 
