@@ -1,3 +1,24 @@
+## v1.0.0 (2020-06-02)
+
+#### :boom: Breaking Change
+* [#73](https://github.com/ronco/ember-cli-head/pull/73) Drop support for Node < 10 and Ember < 2.18. ([@chancancode](https://github.com/chancancode))
+* [#53](https://github.com/ronco/ember-cli-head/pull/53) Update to ember 3.7 ([@snewcomer](https://github.com/snewcomer))
+
+#### :rocket: Enhancement
+* [#78](https://github.com/ronco/ember-cli-head/pull/78) Update dependencies & devDependencies to latest. ([@rwjblue](https://github.com/rwjblue))
+* [#71](https://github.com/ronco/ember-cli-head/pull/71) Migrate to `{{#in-element}}` (from emberjs/rfcs#287) ([@gitKrystan](https://github.com/gitKrystan))
+
+#### :house: Internal
+* [#79](https://github.com/ronco/ember-cli-head/pull/79) Add release automation. ([@rwjblue](https://github.com/rwjblue))
+
+#### Committers: 5
+- Godfrey Chan ([@chancancode](https://github.com/chancancode))
+- Krystan HuffMenne ([@gitKrystan](https://github.com/gitKrystan))
+- Ricardo Mendes ([@locks](https://github.com/locks))
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+- Scott Newcomer ([@snewcomer](https://github.com/snewcomer))
+
+
 # Change Log
 
 ## [v0.4.1](https://github.com/ronco/ember-cli-head/tree/v0.4.1) (2018-05-07)
