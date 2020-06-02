@@ -2,17 +2,22 @@
   "name": "ember-cli-head",
   "version": "0.4.1",
   "description": "An addon to easily set document head content via a template.",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "keywords": [
+    "ember-addon",
+    "meta",
+    "seo"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ronco/ember-cli-head.git"
   },
   "license": "MIT",
   "author": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
   "scripts": {
     "build": "ember build --environment=production",
     "lint:hbs": "ember-template-lint .",
@@ -21,11 +26,6 @@
     "test": "ember test",
     "test:all": "ember try:each"
   },
-  "keywords": [
-    "ember-addon",
-    "meta",
-    "seo"
-  ],
   "dependencies": {
     "ember-cli-babel": "^7.19.0",
     "ember-cli-htmlbars": "^4.3.1",
@@ -60,16 +60,36 @@
     "eslint-plugin-ember": "^8.4.0",
     "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^1.2.0"
+    "qunit-dom": "^1.2.0",
+    "release-it": "^13.6.0",
+    "release-it-lerna-changelog": "^2.3.0"
   },
   "engines": {
     "node": "10.* || >= 12"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember": {
     "edition": "octane"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   },
   "volta": {
     "node": "10.20.1",
