@@ -23,7 +23,7 @@ Install by running
 ember install ember-cli-head
 ```
 
-And add `{{head-layout}}` to the top of your application template.
+And add `<HeadLayout />` to the top of your application template.
 
 #### Version
 Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
@@ -51,6 +51,10 @@ model is actually an alias for the `head-data` service.  You can set
 whatever data you want to be available in the template directly on
 that service.
 
+⚠️ Warning for Octane apps:
+
+Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in `app/templates/head.hbs`.
+
 ### Example
 
 #### Setting content data in route
@@ -58,23 +62,22 @@ that service.
 ```javascript
 // app/routes/application.js
 
-import Route from '@ember/routing/route'
-import { inject } from '@ember/service';
-import { set } from '@ember/object';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Route.extend({
-  // inject the head data service
-  headData: inject(),
+export default class ApplicationRoute extends Route {
+  @service headData;
+
   afterModel() {
-    set(this, 'headData.title', 'Demo App');
+    this.headData.title = 'Demo App';
   }
-});
+}
 ```
 
 #### Using the service as model in head.hbs
 
-```javascript
-<meta property="og:title" content={{model.title}} />
+```handlebars
+<meta property="og:title" content={{this.model.title}} />
 ```
 
 #### Resulting head
@@ -83,28 +86,14 @@ This will result in a document along the lines of:
 
 ```html
 <html data-ember-extension="1">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Ember App</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <base href="/">
-
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/my-app.css">
-
+  <head>
+    ...
+    <meta name="ember-cli-head-start" content>
     <meta property="og:title" content="Demo App">
+    <meta name="ember-cli-head-end" content>
   </head>
   <body class="ember-application">
-
-
-    <script src="assets/vendor.js"></script>
-    <script src="assets/my-app.js"></script>
-    <div id="ember383" class="ember-view"><h2 id="title">Welcome to Ember</h2>
-
-    </div>
+    ...
   </body>
 </html>
 ```
@@ -117,21 +106,23 @@ If you do not wish to have the head content "live" while running in browser you 
 
 ```javascript
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     'ember-cli-head': {
-        suppressBrowserRender: true
+      suppressBrowserRender: true
     }
   };
-}
+
+  return ENV;
+};
 ```
 
 ### Upgrade to 0.4.x
 
-As mentioned above you need to add the `{{head-layout}}` component once and only once in an application wide template.  This template is usually `app/templates/application.hbs`, but could be different in your case.  Previously, in ember-cli-head 0.3.x and below the component was appended to the document inside an instance initializer.  This prevented the need for the `{{head-layout}}` component as it was automatically injected and used inside that initializer.  Unfortunately, this approach needed to change so that we could render the component with the rest of the application rendering.
+As mentioned above you need to add the `<HeadLayout />` component once and only once in an application wide template.  This template is usually `app/templates/application.hbs`, but could be different in your case.  Previously, in ember-cli-head 0.3.x and below the component was appended to the document inside an instance initializer.  This prevented the need for the `<HeadLayout />` component as it was automatically injected and used inside that initializer.  Unfortunately, this approach needed to change so that we could render the component with the rest of the application rendering.
 
 If you care to read more about the details of render please see the PR that introduced these changes https://github.com/ronco/ember-cli-head/pull/37
 
-But for now, if you are upgrading to 0.4.x, you simply need to add `{{head-layout}}` component to your application wide template.
+But for now, if you are upgrading to 0.4.x, you simply need to add `<HeadLayout />` component to your application wide template.
 
 If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
 
