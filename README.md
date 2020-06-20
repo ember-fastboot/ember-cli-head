@@ -146,6 +146,7 @@ In short, if you are upgrading to 0.4.x, you simply add the `<HeadLayout />` com
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
