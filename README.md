@@ -60,9 +60,9 @@ The addon provides `model` that is scoped to the `head` template. The `model` is
 Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in the `head` template.
 
 
-### Example
+## Example
 
-#### Setting content data in route
+### Setting content data in route
 
 ```javascript
 // app/routes/application.js
@@ -79,13 +79,17 @@ export default class ApplicationRoute extends Route {
 }
 ```
 
-#### Using the service as model in head.hbs
+
+### Using the service in head template
 
 ```handlebars
+{{!-- app/templates/head.hbs --}}
+
 <meta property="og:title" content={{this.model.title}} />
 ```
 
-#### Resulting head
+
+### Checking head tag
 
 This will result in a document along the lines of:
 
@@ -102,6 +106,7 @@ This will result in a document along the lines of:
   </body>
 </html>
 ```
+
 
 ### Fastboot Only
 
