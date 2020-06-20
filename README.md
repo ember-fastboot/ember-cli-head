@@ -18,15 +18,25 @@ The hope is that, in the future, Ember will provide a mechanism for populating `
 
 Install by running
 
-```
+```bash
 ember install ember-cli-head
 ```
 
-And add `<HeadLayout />` to the top of your application template.
+Then, add `<HeadLayout />` to the top of your application template.
 
-#### Version
-Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
-Please use 0.2.X if you don't fulfill both requirements.
+```handlebars
+{{!-- app/templates/application.hbs --}}
+
+<HeadLayout />
+
+{{outlet}}
+```
+
+
+### Version
+
+Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1. Please use 0.2.X if you don't fulfill both requirements.
+
 
 ## Usage
 
