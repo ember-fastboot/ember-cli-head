@@ -133,13 +133,14 @@ module.exports = function(environment) {
 If you use `suppressBrowserRender`, the content of `<head>` will be the static FastBoot-rendered content throughout your app's lifecycle.
 
 
-### Upgrade to 0.4.x
+## Upgrade to 0.4.x
 
-As mentioned above you need to add the `<HeadLayout />` component once and only once in an application wide template.  This template is usually `app/templates/application.hbs`, but could be different in your case.  Previously, in ember-cli-head 0.3.x and below the component was appended to the document inside an instance initializer.  This prevented the need for the `<HeadLayout />` component as it was automatically injected and used inside that initializer.  Unfortunately, this approach needed to change so that we could render the component with the rest of the application rendering.
+As previously mentioned, you need to add the `<HeadLayout />` component once and only once in an application-wide template. This template is usually `app/templates/application.hbs` but may be different in your case.
 
-If you care to read more about the details of render please see the PR that introduced these changes https://github.com/ronco/ember-cli-head/pull/37
+Prior to 0.4, the component was appended to the document inside an instance initializer. This prevented the need for the `<HeadLayout />` component as it was automatically injected and used inside that initializer. This approach [needed to change](https://github.com/ronco/ember-cli-head/pull/37) so that we could render the component with the rest of the application rendering.
 
-But for now, if you are upgrading to 0.4.x, you simply need to add `<HeadLayout />` component to your application wide template.
+In short, if you are upgrading to 0.4.x, you simply add the `<HeadLayout />` component to your application-wide template.
+
 
 ## Contributing
 
