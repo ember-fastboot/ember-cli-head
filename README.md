@@ -108,13 +108,17 @@ This will result in a document along the lines of:
 ```
 
 
-### Fastboot Only
+## FastBoot-Only Use
 
-The primary need for this library is to support various bots and web crawlers.  To that end the head content is only truly needed in a server rendered (i.e. FastBoot) environment.  However, by default the library will keep the head content in sync with any transitions/data changes that occur in your Ember App while running in the browser.  This can be useful for development and/or debugging.
+The primary need for this addon is to support various bots and web crawlers. To that end, the head content is only truly needed in a server-rendered environment like FastBoot.
 
-If you do not wish to have the head content "live" while running in browser you can restrict this library to only work in FastBoot by adding the following to your `config/environment.js`:
+By default, the addon will keep the head content in sync with any route transitions and data changes that occur when your Ember app runs in the browser. This can be useful for development and debugging.
+
+If you don't wish the head content to be "live" when the app runs in browser, you can restrict this addon to run only in FastBoot:
 
 ```javascript
+// config/environment.js
+
 module.exports = function(environment) {
   let ENV = {
     'ember-cli-head': {
@@ -126,6 +130,9 @@ module.exports = function(environment) {
 };
 ```
 
+If you use `suppressBrowserRender`, the content of `<head>` will be the static FastBoot-rendered content throughout your app's lifecycle.
+
+
 ### Upgrade to 0.4.x
 
 As mentioned above you need to add the `<HeadLayout />` component once and only once in an application wide template.  This template is usually `app/templates/application.hbs`, but could be different in your case.  Previously, in ember-cli-head 0.3.x and below the component was appended to the document inside an instance initializer.  This prevented the need for the `<HeadLayout />` component as it was automatically injected and used inside that initializer.  Unfortunately, this approach needed to change so that we could render the component with the rest of the application rendering.
@@ -133,8 +140,6 @@ As mentioned above you need to add the `<HeadLayout />` component once and only 
 If you care to read more about the details of render please see the PR that introduced these changes https://github.com/ronco/ember-cli-head/pull/37
 
 But for now, if you are upgrading to 0.4.x, you simply need to add `<HeadLayout />` component to your application wide template.
-
-If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
 
 ## Contributing
 
