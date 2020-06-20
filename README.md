@@ -1,19 +1,18 @@
-# ember-cli-head [![Build Status](https://github.com/ronco/ember-cli-head/workflows/Build/badge.svg?branch=master)](https://github.com/ronco/ember-cli-head/actions?query=branch%3Amaster+workflow%3A%22Build%22)
+[![Build Status](https://github.com/ronco/ember-cli-head/workflows/Build/badge.svg?branch=master)](https://github.com/ronco/ember-cli-head/actions?query=branch%3Amaster+workflow%3A%22Build%22)
 
-This addon adds easy population of head tags from your Ember code
-without any direct hacky DOM manipulation.  This addon also provides
-[ember-cli-fastboot](https://github.com/tildeio/ember-cli-fastboot)
-compatibility for generating head tags in server-rendered apps.
+# ember-cli-head
 
-The hope is that Ember itself will provide a mechanism for populating
-head tags from your app at some time in the future.  Until then this
-addon provides that functionality.
+This addon lets you populate `<head>` tag from your Ember code without any direct hacky DOM manipulation. It also provides [ember-cli-fastboot](https://github.com/ember-fastboot/ember-cli-fastboot) compatibility for generating head tags in server-rendered apps.
+
+The hope is that, in the future, Ember will provide a mechanism for populating `<head>` tag from your app. Until then, this addon provides that functionality.
+
 
 ## Compatibility
 
 * Ember.js v2.18 or above
 * Ember CLI v2.13 or above
 * Node.js v10 or above
+
 
 ## Installation
 
