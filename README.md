@@ -40,29 +40,25 @@ Take into account that version >= 0.3 of this addon require Ember 2.10+ and fast
 
 ## Usage
 
-#### Template
+### Head template
 
-By installing this addon you will find a new template added to your
-app:
+By installing this addon, you will find a new template added to your app, called `head`:
 
 ```
 app/templates/head.hbs
 ```
 
-The contents of this template will be inserted into the `<head>`
-element of the page.
+The contents of this template will be inserted into the `<head>` element of the page.
 
 
-#### Service
+### Head data service
 
-There will be a `model` in the rendering scope of this template.  This
-model is actually an alias for the `head-data` service.  You can set
-whatever data you want to be available in the template directly on
-that service.
+The addon provides `model` that is scoped to the `head` template. The `model` is actually an alias of the `head-data` service. You can set whatever data you want to be available to the `head` template on this service.
 
-⚠️ Warning for Octane apps:
+⚠️ Warning for Octane apps
 
-Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in `app/templates/head.hbs`.
+Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in the `head` template.
+
 
 ### Example
 
