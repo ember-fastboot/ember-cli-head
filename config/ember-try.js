@@ -113,6 +113,16 @@ module.exports = async function() {
             edition: 'classic'
           }
         }
+      },
+      {
+        name: 'ember-embroider',
+        npm: {
+          devDependencies: {
+            '@embroider/core': '*',
+            '@embroider/webpack': '*',
+            '@embroider/compat': '*',
+          },
+        },
       }
     ]
   };
