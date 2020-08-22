@@ -79,6 +79,18 @@ export default class ApplicationRoute extends Route {
 }
 ```
 
+### Declare `title` as a tracked property on the `head-data` service
+
+```javascript
+// app/services/head-data.js
+
+import Service from '@ember/service';
+import { tracked } from '@glimmer/tracking';
+
+export default class HeadDataService extends Service {
+  @tracked title;
+}
+```
 
 ### Using the service in head template
 
