@@ -70,6 +70,9 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "resolutions": {
+    "fastboot": "3.1.0"
+  },
   "ember": {
     "edition": "octane"
   },
