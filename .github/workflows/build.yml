@@ -46,7 +46,7 @@ jobs:
         if: matrix.scenario != 'default' && matrix.scenario != 'default-with-lockfile'
         run: >-
           yarn ember try:one ember-${{ matrix.scenario }} --skip-cleanup ---
-          '[ -z "$EMBER_OPTIONAL_FEATURES" ] || echo "::set-env name=EMBER_OPTIONAL_FEATURES::$EMBER_OPTIONAL_FEATURES"'
+          '[ -z "$EMBER_OPTIONAL_FEATURES" ] || echo "EMBER_OPTIONAL_FEATURES=$EMBER_OPTIONAL_FEATURES" >> $GITHUB_ENV'
       - name: Lint (hbs)
         run: yarn lint:hbs
       - name: Lint (js)
