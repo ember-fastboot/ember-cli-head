@@ -1,17 +1,19 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { visit } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | head component');
+module('Acceptance | head component', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('has head-data service content', function(assert) {
-  visit('/');
+  test('has head-data service content', async function(assert) {
+    await visit('/');
 
-  andThen(function() {
-    assert.equal(find('meta[property="og:title"]', 'head').attr('content'), 'Hello page');
-  });
+    assert.dom('h1').hasText('Hello page');
+    assert.dom('head meta[property="og:title"]', document).hasAttribute('content', 'Hello page');
 
-  visit('/other-page');
-  andThen(function() {
-    assert.equal(find('meta[property="og:title"]', 'head').attr('content'), 'Other page');
+    await visit('/other-page');
+
+    assert.dom('h1').hasText('Other page');
+    assert.dom('head meta[property="og:title"]', document).hasAttribute('content', 'Other page');
   });
 });

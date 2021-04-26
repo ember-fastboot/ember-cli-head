@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route'
+import { inject } from '@ember/service';
+import { set } from '@ember/object';
 
-const { set } = Ember;
-
-export default Ember.Route.extend({
-  headData: Ember.inject.service(),
+export default Route.extend({
+  headData: inject(),
   afterModel() {
     set(this, 'headData.title', "Other page");
   }

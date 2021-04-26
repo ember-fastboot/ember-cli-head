@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import { inject } from '@ember/service';
+import Component from '@ember/component';
 import layout from '../templates/head';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: '',
-  model: Ember.inject.service('head-data'),
+  model: inject('head-data'),
   layout
 });

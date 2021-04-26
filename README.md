@@ -1,120 +1,164 @@
-# Ember-cli-head [![Build Status](https://travis-ci.org/ronco/ember-cli-head.svg?branch=master)](https://travis-ci.org/ronco/ember-cli-head)
+[![Build Status](https://github.com/ronco/ember-cli-head/workflows/Build/badge.svg?branch=master)](https://github.com/ronco/ember-cli-head/actions?query=branch%3Amaster+workflow%3A%22Build%22)
 
-This addon adds easy population of head tags from your Ember code
-without any direct hacky dom manipulation.  This addon also provides
-[ember-cli-fastboot](https://github.com/tildeio/ember-cli-fastboot)
-compatability for generating head tags in server rendered apps.
+# ember-cli-head
 
-The hope is that Ember itself will provide a mechanism for populating
-head tags from your app at some time in the future.  Until then this
-addon provides that functionality.
+This addon lets you populate `<head>` tag from your Ember code without any direct hacky DOM manipulation. It also provides [ember-cli-fastboot](https://github.com/ember-fastboot/ember-cli-fastboot) compatibility for generating head tags in server-rendered apps.
+
+The hope is that, in the future, Ember will provide a mechanism for populating `<head>` tag from your app. Until then, this addon provides that functionality.
+
+
+## Compatibility
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
+
 
 ## Installation
 
 Install by running
 
-```
+```bash
 ember install ember-cli-head
 ```
 
-#### Version
-Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1
-Please use 0.2.X if you don't fulfull both requirements.
+Then, add `<HeadLayout />` to the top of your application template.
+
+```handlebars
+{{!-- app/templates/application.hbs --}}
+
+<HeadLayout />
+
+{{outlet}}
+```
+
+
+### Version
+
+Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1. Please use 0.2.X if you don't fulfill both requirements.
+
 
 ## Usage
 
-#### Template
+### Head template
 
-By installing this addon you will find a new template added to your
-app:
+By installing this addon, you will find a new template added to your app, called `head`:
 
 ```
 app/templates/head.hbs
 ```
 
-The contents of this template will be inserted into the `<head>`
-element of the page.
+The contents of this template will be inserted into the `<head>` element of the page.
 
 
-#### Service
+### Head data service
 
-There will be a `model` in the rendering scope of this template.  This
-model is actually an alias for the `head-data` service.  You can set
-whatever data you want to be available in the template directly on
-that service.
+The addon provides `model` that is scoped to the `head` template. The `model` is actually an alias of the `head-data` service. You can set whatever data you want to be available to the `head` template on this service.
 
-### Example
+⚠️ Warning for Octane apps
 
-#### Setting content data in route
+Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in the `head` template.
+
+
+## Example
+
+### Setting content data in route
 
 ```javascript
 // app/routes/application.js
 
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-const { set } = Ember;
+export default class ApplicationRoute extends Route {
+  @service headData;
 
-export default Ember.Route.extend({
-  // inject the head data service
-  headData: Ember.inject.service(),
   afterModel() {
-    set(this, 'headData.title', 'Demo App');
+    this.headData.title = 'Demo App';
   }
-});
+}
 ```
 
-#### Using the service as model in head.hbs
+### Declare `title` as a tracked property on the `head-data` service
 
 ```javascript
-<meta property="og:title" content={{model.title}} />
+// app/services/head-data.js
+
+import Service from '@ember/service';
+import { tracked } from '@glimmer/tracking';
+
+export default class HeadDataService extends Service {
+  @tracked title;
+}
 ```
 
-#### Resulting head
+### Using the service in head template
+
+```handlebars
+{{!-- app/templates/head.hbs --}}
+
+<meta property="og:title" content={{this.model.title}} />
+```
+
+
+### Checking head tag
 
 This will result in a document along the lines of:
 
 ```html
 <html data-ember-extension="1">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Ember App</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <base href="/">
-
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/my-app.css">
-
+  <head>
+    ...
+    <meta name="ember-cli-head-start" content>
     <meta property="og:title" content="Demo App">
+    <meta name="ember-cli-head-end" content>
   </head>
   <body class="ember-application">
-
-
-    <script src="assets/vendor.js"></script>
-    <script src="assets/my-app.js"></script>
-    <div id="ember383" class="ember-view"><h2 id="title">Welcome to Ember</h2>
-
-    </div>
+    ...
   </body>
 </html>
 ```
 
-### Fastboot Only
 
-The primary need for this library is to support various bots and web crawlers.  To that end the head content is only truly needed in a server rendered (ie FastBoot) environment.  However by default the library will keep the head content in sync with any transitions/data changes that occur in your Ember App while running in the browser.  This can be useful for development and/or debugging.
+## FastBoot-Only Use
 
-If you do not wish to have the head content "live" while running in browser you can restrict this library to work only in FastBoot by adding the following to your `config/environment.js`:
+The primary need for this addon is to support various bots and web crawlers. To that end, the head content is only truly needed in a server-rendered environment like FastBoot.
+
+By default, the addon will keep the head content in sync with any route transitions and data changes that occur when your Ember app runs in the browser. This can be useful for development and debugging.
+
+If you don't wish the head content to be "live" when the app runs in browser, you can restrict this addon to run only in FastBoot:
 
 ```javascript
+// config/environment.js
+
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     'ember-cli-head': {
-        suppressBrowserRender: true
+      suppressBrowserRender: true
     }
   };
-}
+
+  return ENV;
+};
 ```
 
-If you make use of this mode the content of `<head>` will be the static FastBoot rendered content through the life of your App.
+If you use `suppressBrowserRender`, the content of `<head>` will be the static FastBoot-rendered content throughout your app's lifecycle.
+
+
+## Upgrade to 0.4.x
+
+As previously mentioned, you need to add the `<HeadLayout />` component once and only once in an application-wide template. This template is usually `app/templates/application.hbs` but may be different in your case.
+
+Prior to 0.4, the component was appended to the document inside an instance initializer. This prevented the need for the `<HeadLayout />` component as it was automatically injected and used inside that initializer. This approach [needed to change](https://github.com/ronco/ember-cli-head/pull/37) so that we could render the component with the rest of the application rendering.
+
+In short, if you are upgrading to 0.4.x, you simply add the `<HeadLayout />` component to your application-wide template.
+
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).

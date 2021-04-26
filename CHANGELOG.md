@@ -1,4 +1,97 @@
-# Change Log
+## v1.0.0 (2020-06-02)
+
+#### :boom: Breaking Change
+* [#73](https://github.com/ronco/ember-cli-head/pull/73) Drop support for Node < 10 and Ember < 2.18. ([@chancancode](https://github.com/chancancode))
+* [#53](https://github.com/ronco/ember-cli-head/pull/53) Update to ember 3.7 ([@snewcomer](https://github.com/snewcomer))
+
+#### :rocket: Enhancement
+* [#78](https://github.com/ronco/ember-cli-head/pull/78) Update dependencies & devDependencies to latest. ([@rwjblue](https://github.com/rwjblue))
+* [#71](https://github.com/ronco/ember-cli-head/pull/71) Migrate to `{{#in-element}}` (from emberjs/rfcs#287) ([@gitKrystan](https://github.com/gitKrystan))
+
+#### :house: Internal
+* [#79](https://github.com/ronco/ember-cli-head/pull/79) Add release automation. ([@rwjblue](https://github.com/rwjblue))
+
+#### Committers: 5
+- Godfrey Chan ([@chancancode](https://github.com/chancancode))
+- Krystan HuffMenne ([@gitKrystan](https://github.com/gitKrystan))
+- Ricardo Mendes ([@locks](https://github.com/locks))
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+- Scott Newcomer ([@snewcomer](https://github.com/snewcomer))
+
+## [v0.4.1](https://github.com/ronco/ember-cli-head/tree/v0.4.1) (2018-05-07)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.4.0...v0.4.1)
+
+**Closed issues:**
+
+- Meta elements "ember-cli-head-start" and "ember-cli-head-end" missing "content" attribute [\#47](https://github.com/ronco/ember-cli-head/issues/47)
+- Does this repo really only work with Fastboot now? [\#46](https://github.com/ronco/ember-cli-head/issues/46)
+- When loading page you get no title while the application renders [\#43](https://github.com/ronco/ember-cli-head/issues/43)
+- Make FastBoot DOM smashing opt-in [\#41](https://github.com/ronco/ember-cli-head/issues/41)
+- 0.4.0 made all my head data stop working [\#40](https://github.com/ronco/ember-cli-head/issues/40)
+- rootURL favicon link difficulties \(not using fastboot\) [\#39](https://github.com/ronco/ember-cli-head/issues/39)
+
+**Merged pull requests:**
+
+- Added empty content attribute to meta tags [\#50](https://github.com/ronco/ember-cli-head/pull/50) ([samcic](https://github.com/samcic))
+- Avoid issues with Chrome suid on CI. [\#49](https://github.com/ronco/ember-cli-head/pull/49) ([rwjblue](https://github.com/rwjblue))
+- Refactor instance-initializer [\#45](https://github.com/ronco/ember-cli-head/pull/45) ([mydea](https://github.com/mydea))
+
+## [v0.4.0](https://github.com/ronco/ember-cli-head/tree/v0.4.0) (2017-09-21)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.3.1...v0.4.0)
+
+**Closed issues:**
+
+- Acceptance testing [\#38](https://github.com/ronco/ember-cli-head/issues/38)
+
+**Merged pull requests:**
+
+- Use `-in-element` to render at appropriate time [\#37](https://github.com/ronco/ember-cli-head/pull/37) ([rondale-sc](https://github.com/rondale-sc))
+
+## [v0.3.1](https://github.com/ronco/ember-cli-head/tree/v0.3.1) (2017-06-27)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.2.2...v0.3.1)
+
+**Closed issues:**
+
+- head-browser instance-initializer not found from ember-page-title, booting the app fails \(v0.3, fastboot rc3\) [\#34](https://github.com/ronco/ember-cli-head/issues/34)
+- Fastboot deprecation [\#29](https://github.com/ronco/ember-cli-head/issues/29)
+
+**Merged pull requests:**
+
+- Fix head-fastboot instance-initializer overriding head-browser [\#35](https://github.com/ronco/ember-cli-head/pull/35) ([simonihmig](https://github.com/simonihmig))
+- Make addon more idiomatic at the expense of making it 2.10+ & fastboot 1.0rc+ [\#32](https://github.com/ronco/ember-cli-head/pull/32) ([cibernox](https://github.com/cibernox))
+
+## [v0.2.2](https://github.com/ronco/ember-cli-head/tree/v0.2.2) (2017-06-01)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.2.1...v0.2.2)
+
+**Merged pull requests:**
+
+- Make it work without jQuery [\#27](https://github.com/ronco/ember-cli-head/pull/27) ([cibernox](https://github.com/cibernox))
+
+## [v0.2.1](https://github.com/ronco/ember-cli-head/tree/v0.2.1) (2017-06-01)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.2.0...v0.2.1)
+
+**Closed issues:**
+
+- Incompatible with FastBoot [\#26](https://github.com/ronco/ember-cli-head/issues/26)
+- Cannot find fastboot-filter-initializers [\#22](https://github.com/ronco/ember-cli-head/issues/22)
+
+**Merged pull requests:**
+
+- Prepare for FastBoot 1.0 [\#21](https://github.com/ronco/ember-cli-head/pull/21) ([simonihmig](https://github.com/simonihmig))
+
+## [v0.2.0](https://github.com/ronco/ember-cli-head/tree/v0.2.0) (2017-04-26)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.5...v0.2.0)
+
+## [v0.1.5](https://github.com/ronco/ember-cli-head/tree/v0.1.5) (2017-04-26)
+[Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.4...v0.1.5)
+
+**Closed issues:**
+
+- Fastboot with Ember 2.11: EventDispatcher should never be instantiated in fastboot mode. [\#18](https://github.com/ronco/ember-cli-head/issues/18)
+
+**Merged pull requests:**
+
+- Upgrade to ember-cli 2.12.2 / Babel6 / yarn [\#20](https://github.com/ronco/ember-cli-head/pull/20) ([simonihmig](https://github.com/simonihmig))
 
 ## [v0.1.4](https://github.com/ronco/ember-cli-head/tree/v0.1.4) (2017-01-25)
 [Full Changelog](https://github.com/ronco/ember-cli-head/compare/v0.1.3...v0.1.4)
@@ -86,7 +179,3 @@
 **Merged pull requests:**
 
 - Fastboot compatibility [\#1](https://github.com/ronco/ember-cli-head/pull/1) ([ronco](https://github.com/ronco))
-
-
-
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
