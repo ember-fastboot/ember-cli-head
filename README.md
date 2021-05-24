@@ -8,7 +8,7 @@ The hope is that, in the future, Ember will provide a mechanism for populating `
 
 * Ember.js v3.16 or above
 * Ember CLI v2.13 or above
-* Node.js v10 or above
+* Node.js v12 or above
 
 
 ## Installation
