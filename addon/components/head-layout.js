@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 
 export default class HeadLayout extends Component {
-  @service('-document') document
+  @service('-document') document;
 
   /**
    * If true, this will tear down any existing head on init of this component.
@@ -10,13 +10,13 @@ export default class HeadLayout extends Component {
    * If you do not want this behavior, you can set this to false.
    * @public
    */
-  shouldTearDownOnInit = true
+  shouldTearDownOnInit = true;
 
   /**
    * The element to render into. Defaults to <head> in `init`, overridable for our own tests only.
    * @private
    */
-  headElement = this.args.headElement || this.document.head
+  headElement = this.args.headElement || this.document.head;
 
   constructor() {
     super(...arguments);
@@ -51,7 +51,6 @@ export default class HeadLayout extends Component {
   }
 
   _isFastboot() {
-    return typeof FastBoot !== 'undefined'
+    return typeof FastBoot !== 'undefined';
   }
-
 }

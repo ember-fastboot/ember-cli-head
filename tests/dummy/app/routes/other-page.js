@@ -5,6 +5,6 @@ import { set } from '@ember/object';
 export default Route.extend({
   headData: service(),
   afterModel() {
-    set(this, 'headData.title', "Other page");
-  }
+    set(this, 'headData.title', 'Other page');
+  },
 });
