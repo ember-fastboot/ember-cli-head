@@ -19,7 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         scenario:
-          - default
           - default-with-lockfile
           - default-with-jquery
           - release
