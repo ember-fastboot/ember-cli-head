@@ -35,24 +35,18 @@ jobs:
         uses: actions/checkout@v1
       - name: Set up Volta
         uses: volta-cli/action@v1
-      - name: Install dependencies (yarn)
-        if: matrix.scenario == 'default-with-lockfile'
-        run: yarn install --non-interactive --frozen-lockfile
-      - name: Install dependencies (yarn)
-        if: matrix.scenario != 'default-with-lockfile'
-        run: yarn install --non-interactive --no-lockfile
+      - name: Install dependencies
+        run: npm ci
       - name: Setup ember-try scenario
-        if: matrix.scenario != 'default' && matrix.scenario != 'default-with-lockfile'
+        if: matrix.scenario != 'default-with-lockfile'
         run: >-
-          yarn ember try:one ember-${{ matrix.scenario }} --skip-cleanup ---
+          npx ember try:one ember-${{ matrix.scenario }} --skip-cleanup ---
           '[ -z "$EMBER_OPTIONAL_FEATURES" ] || echo "EMBER_OPTIONAL_FEATURES=$EMBER_OPTIONAL_FEATURES" >> $GITHUB_ENV'
-      - name: Lint (hbs)
-        run: yarn lint:hbs
-      - name: Lint (js)
-        run: yarn lint:js
+      - name: Lint
+        run: npm run lint
       - name: Build
         run: yarn ember build --environment test
       - name: Run test
         # Due to a bug in ember-cli, running `ember test` with `--path` doesn't set `EMBER_ENV=test`
         # See https://github.com/ember-cli/ember-cli/issues/8922
-        run: EMBER_ENV=test yarn test --path dist
+        run: EMBER_ENV=test npm run test:ember -- --path dist
