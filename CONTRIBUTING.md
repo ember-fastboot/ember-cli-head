@@ -4,12 +4,12 @@
 
 * `git clone <repository-url>`
 * `cd ember-cli-head`
-* `yarn install`
+* `npm ci`
 
 ## Linting
 
-* `yarn lint`
-* `yarn lint:fix`
+* `npm run lint`
+* `npm run lint:fix`
 
 ## Running tests
 

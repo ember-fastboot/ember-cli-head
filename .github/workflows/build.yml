@@ -44,7 +44,7 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Build
-        run: yarn ember build --environment test
+        run: npx ember build --environment test
       - name: Run test
         # Due to a bug in ember-cli, running `ember test` with `--path` doesn't set `EMBER_ENV=test`
         # See https://github.com/ember-cli/ember-cli/issues/8922
