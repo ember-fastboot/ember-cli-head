@@ -84,7 +84,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "resolutions": {
-    "fastboot": "3.3.0"
+    "fastboot": "3.1.3"
   },
   "ember": {
     "edition": "octane"
