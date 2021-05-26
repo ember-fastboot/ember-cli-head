@@ -4,7 +4,7 @@ import layout from '../templates/head';
 import { setComponentTemplate } from '@ember/component';
 
 export default class HeadContent extends Component {
-  @service('head-data') model
-};
+  @service('head-data') model;
+}
 
 setComponentTemplate(layout, HeadContent);
