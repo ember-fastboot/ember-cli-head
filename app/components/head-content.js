@@ -1,9 +1,10 @@
-import { inject } from '@ember/service';
-import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import Component from '@glimmer/component';
 import layout from '../templates/head';
+import { setComponentTemplate } from '@ember/component';
 
-export default Component.extend({
-  tagName: '',
-  model: inject('head-data'),
-  layout,
-});
+export default class HeadContent extends Component {
+  @service('head-data') model
+};
+
+setComponentTemplate(layout, HeadContent);
