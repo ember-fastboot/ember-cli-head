@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.0.0 (2021-05-26)
+
+#### :boom: Breaking Change
+* [#94](https://github.com/ronco/ember-cli-head/pull/94) Refactor to use @glimmer/components ([@cibernox](https://github.com/cibernox))
+* [#94](https://github.com/ronco/ember-cli-head/pull/94) Drop Node 10 support ([@cibernox](https://github.com/cibernox))
+* [#94](https://github.com/ronco/ember-cli-head/pull/94) Drop Ember < 3.16 ([@cibernox](https://github.com/cibernox))
+
+#### :rocket: Enhancement
+* [#86](https://github.com/ronco/ember-cli-head/pull/86) Test ember-cli-head against embroider build ([@kiwiupover](https://github.com/kiwiupover))
+
+#### Committers: 5
+- Dave Laird ([@kiwiupover](https://github.com/kiwiupover))
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+- Miguel Camba ([@cibernox](https://github.com/cibernox))
+- Peter Wagenet ([@wagenet](https://github.com/wagenet))
+- Yoran Brondsema ([@YoranBrondsema](https://github.com/YoranBrondsema))
+
+
 ## v1.0.0 (2020-06-02)
 
 #### :boom: Breaking Change
