@@ -26,8 +26,8 @@ jobs:
           - ember-canary
           - ember-lts-3.16
           - ember-lts-3.20
-          # - embroider-safe
-          # - embroider-optimized
+          - embroider-safe
+          - embroider-optimized
 
     steps:
       - name: Checkout
