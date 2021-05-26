@@ -1,11 +1,8 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
-import layout from '../templates/components/head-layout';
 
-export default Component.extend({
-  tagName: '',
-  layout,
-  document: service('-document'),
+export default class HeadLayout extends Component {
+  @service('-document') document;
 
   /**
    * If true, this will tear down any existing head on init of this component.
@@ -13,25 +10,21 @@ export default Component.extend({
    * If you do not want this behavior, you can set this to false.
    * @public
    */
-  shouldTearDownOnInit: true,
+  shouldTearDownOnInit = true;
 
   /**
    * The element to render into. Defaults to <head> in `init`, overridable for our own tests only.
    * @private
    */
-  headElement: null,
+  headElement = this.args.headElement || this.document.head;
 
-  init() {
-    this._super(...arguments);
+  constructor() {
+    super(...arguments);
 
-    if (this.get('headElement') === null) {
-      this.set('headElement', this.get('document.head'));
-    }
-
-    if (this.get('shouldTearDownOnInit')) {
+    if (this.shouldTearDownOnInit) {
       this._tearDownHead();
     }
-  },
+  }
 
   /**
    * Tear down any previous head, if there was one.
@@ -43,7 +36,7 @@ export default Component.extend({
     }
 
     // clear fast booted head (if any)
-    let document = this.get('document');
+    let document = this.document;
     let startMeta = document.querySelector('meta[name="ember-cli-head-start"]');
     let endMeta = document.querySelector('meta[name="ember-cli-head-end"]');
     if (startMeta && endMeta) {
@@ -55,10 +48,9 @@ export default Component.extend({
       document.head.removeChild(startMeta);
       document.head.removeChild(endMeta);
     }
-  },
-
-  _isFastboot() {
-    return typeof FastBoot !== 'undefined'
   }
 
-});
+  _isFastboot() {
+    return typeof FastBoot !== 'undefined';
+  }
+}

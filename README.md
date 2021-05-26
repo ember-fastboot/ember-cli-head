@@ -6,12 +6,9 @@ This addon lets you populate `<head>` tag from your Ember code without any direc
 
 The hope is that, in the future, Ember will provide a mechanism for populating `<head>` tag from your app. Until then, this addon provides that functionality.
 
-
-## Compatibility
-
-* Ember.js v2.18 or above
+* Ember.js v3.16 or above
 * Ember CLI v2.13 or above
-* Node.js v10 or above
+* Node.js v12 or above
 
 
 ## Installation
