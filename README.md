@@ -9,7 +9,7 @@ The hope is that, in the future, Ember will provide a mechanism for populating `
 ## Compatibility
 
 * Ember.js v3.16 or above
-* Ember CLI v2.13 or above
+* Ember CLI v3.16 or above
 * Node.js v12 or above
 
 
