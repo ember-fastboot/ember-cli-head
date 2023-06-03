@@ -6,6 +6,8 @@ This addon lets you populate `<head>` tag from your Ember code without any direc
 
 The hope is that, in the future, Ember will provide a mechanism for populating `<head>` tag from your app. Until then, this addon provides that functionality.
 
+## Compatibility
+
 * Ember.js v3.16 or above
 * Ember CLI v2.13 or above
 * Node.js v12 or above
@@ -19,7 +21,9 @@ Install by running
 ember install ember-cli-head
 ```
 
-Then, add `<HeadLayout />` to the top of your application template.
+## Usage
+
+Add `<HeadLayout />` to the top of your application template.
 
 ```handlebars
 {{!-- app/templates/application.hbs --}}
