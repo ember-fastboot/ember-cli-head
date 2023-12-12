@@ -1,4 +1,22 @@
 # Changelog
+## Release (2023-12-12)
+
+ember-cli-head 3.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-cli-head`
+  * [#113](https://github.com/ember-fastboot/ember-cli-head/pull/113) drop support for node < v16 ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-cli-head`
+  * [#107](https://github.com/ember-fastboot/ember-cli-head/pull/107) update to v4.12 with ember-cli-update ([@mansona](https://github.com/mansona))
+  * [#115](https://github.com/ember-fastboot/ember-cli-head/pull/115) swap to pnpm ([@mansona](https://github.com/mansona))
+  * [#112](https://github.com/ember-fastboot/ember-cli-head/pull/112) setup release-plan ([@mansona](https://github.com/mansona))
+  * [#105](https://github.com/ember-fastboot/ember-cli-head/pull/105) update ember-auto-import devDependency to v2 ([@mansona](https://github.com/mansona))
+  * [#100](https://github.com/ember-fastboot/ember-cli-head/pull/100) unify CI with the default output of ember addon ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
 
 ## v2.0.0 (2021-05-26)
 
