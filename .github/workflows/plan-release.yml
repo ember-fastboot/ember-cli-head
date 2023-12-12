@@ -50,14 +50,17 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm ci
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm install --frozen-lockfile
 
       - name: "Generate Explanation and Prep Changelogs"
         id: explanation
         run: |
           set -x
 
-          npx release-plan prepare --single-package=ember-cli-head
+          pnpm release-plan prepare
 
           echo 'text<<EOF' >> $GITHUB_OUTPUT
           jq .description .release-plan.json -r >> $GITHUB_OUTPUT
