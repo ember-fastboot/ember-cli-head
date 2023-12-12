@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "ember-cli-head": {
+      "impact": "major",
+      "oldVersion": "2.0.0",
+      "newVersion": "3.0.0",
+      "constraints": [
+        {
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2023-12-12)\n\nember-cli-head 3.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-cli-head`\n  * [#113](https://github.com/ember-fastboot/ember-cli-head/pull/113) drop support for node < v16 ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-cli-head`\n  * [#107](https://github.com/ember-fastboot/ember-cli-head/pull/107) update to v4.12 with ember-cli-update ([@mansona](https://github.com/mansona))\n  * [#115](https://github.com/ember-fastboot/ember-cli-head/pull/115) swap to pnpm ([@mansona](https://github.com/mansona))\n  * [#112](https://github.com/ember-fastboot/ember-cli-head/pull/112) setup release-plan ([@mansona](https://github.com/mansona))\n  * [#105](https://github.com/ember-fastboot/ember-cli-head/pull/105) update ember-auto-import devDependency to v2 ([@mansona](https://github.com/mansona))\n  * [#100](https://github.com/ember-fastboot/ember-cli-head/pull/100) unify CI with the default output of ember addon ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+}
