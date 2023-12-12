@@ -4,12 +4,12 @@
 
 * `git clone <repository-url>`
 * `cd ember-cli-head`
-* `npm ci`
+* `pnpm i`
 
 ## Linting
 
-* `npm run lint`
-* `npm run lint:fix`
+* `pnpm lint`
+* `pnpm lint:fix`
 
 ## Running tests
 
