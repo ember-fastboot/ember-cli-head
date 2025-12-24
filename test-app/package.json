@@ -1,0 +1,89 @@
+{
+  "name": "test-app",
+  "version": "2.0.0",
+  "description": "An addon to easily set document head content via a template.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronco/ember-cli-head.git"
+  },
+  "private": true,
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build --environment=production",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "start": "ember serve",
+    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
+    "test:ember": "ember test",
+    "ember-compatibility-tests": "ember try:each"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "@babel/plugin-proposal-decorators": "^7.21.0",
+    "@ember/optional-features": "^2.0.0",
+    "@ember/string": "^3.0.1",
+    "@ember/test-helpers": "^2.9.3",
+    "@embroider/test-setup": "^2.1.1",
+    "@glimmer/component": "^2.0.0",
+    "@glimmer/tracking": "^1.1.2",
+    "@glint/core": "^1.4.0",
+    "@glint/environment-ember-template-imports": "^1.4.0",
+    "@glint/template": "^1.4.0",
+    "broccoli-asset-rev": "^3.0.0",
+    "chai": "^4.2.0",
+    "concurrently": "^9.1.2",
+    "ember-auto-import": "^2.6.3",
+    "ember-cli": "~6.9.1",
+    "ember-cli-babel": "^8.2.0",
+    "ember-cli-dependency-checker": "^3.3.1",
+    "ember-cli-deprecation-workflow": "^4.0.0",
+    "ember-cli-fastboot": "^4.1.1",
+    "ember-cli-fastboot-testing": "^0.6.1",
+    "ember-cli-head": "workspace:*",
+    "ember-cli-htmlbars": "^6.2.0",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-sri": "^2.1.1",
+    "ember-cli-terser": "^4.0.2",
+    "ember-load-initializers": "^2.1.2",
+    "ember-page-title": "^7.0.0",
+    "ember-qunit": "^6.2.0",
+    "ember-resolver": "^10.0.0",
+    "ember-source": "~4.12.0",
+    "ember-source-channel-url": "^3.0.0",
+    "ember-template-imports": "^4.4.0",
+    "ember-template-lint": "^5.7.2",
+    "ember-try": "^3.0.0",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-ember": "^12.7.5",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-qunit": "^8.2.5",
+    "loader.js": "^4.7.0",
+    "prettier": "^2.8.7",
+    "prettier-plugin-ember-template-tag": "^2.0.4",
+    "qunit": "^2.19.4",
+    "qunit-dom": "^2.0.0",
+    "release-plan": "^0.5.1",
+    "webpack": "^5.85.0"
+  },
+  "engines": {
+    "node": "12.* || 14.* || 16.* || >= 18"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  }
+}

@@ -53,6 +53,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: npm publish
         run: pnpm release-plan publish
+        working-directory: addon
 
         env:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}

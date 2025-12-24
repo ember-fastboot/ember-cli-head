@@ -1,5 +1,3 @@
-[![Build Status](https://github.com/ronco/ember-cli-head/workflows/Build/badge.svg?branch=master)](https://github.com/ronco/ember-cli-head/actions?query=branch%3Amaster+workflow%3A%22Build%22)
-
 # ember-cli-head
 
 This addon lets you populate `<head>` tag from your Ember code without any direct hacky DOM manipulation. It also provides [ember-cli-fastboot](https://github.com/ember-fastboot/ember-cli-fastboot) compatibility for generating head tags in server-rendered apps.
@@ -25,54 +23,36 @@ ember install ember-cli-head
 
 Add `<HeadLayout />` to the top of your application template.
 
-```handlebars
-{{!-- app/templates/application.hbs --}}
+```gjs
+// app/templates/application.gjs
 
-<HeadLayout />
+import { HeadLayout } from 'ember-cli-head';
+
+<template>
+  <HeadLayout>
+    <meta property="og:title" content="My App">
+  </HeadLayout>
 
 {{outlet}}
+</template>
 ```
 
-
-### Version
-
-Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1. Please use 0.2.X if you don't fulfill both requirements.
-
-
-## Usage
-
-### Head template
-
-By installing this addon, you will find a new template added to your app, called `head`:
-
-```
-app/templates/head.hbs
-```
-
-The contents of this template will be inserted into the `<head>` element of the page.
-
-
-### Head data service
-
-The addon provides `model` that is scoped to the `head` template. The `model` is actually an alias of the `head-data` service. You can set whatever data you want to be available to the `head` template on this service.
-
-⚠️ Warning for Octane apps
-
-Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in the `head` template.
-
+The contents of HeadLayout's defaukt block will be inserted into the `<head>` element of the page.
 
 ## Example
 
 ### Setting content data in route
 
-```javascript
-// app/routes/application.js
+```typescript
+// app/routes/application.ts
 
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
+
+import HeadDataService from 'app/services/head-data';
 
 export default class ApplicationRoute extends Route {
-  @service headData;
+  @service declare headData: HeadDataService;
 
   afterModel() {
     this.headData.title = 'Demo App';
@@ -82,25 +62,49 @@ export default class ApplicationRoute extends Route {
 
 ### Declare `title` as a tracked property on the `head-data` service
 
-```javascript
-// app/services/head-data.js
+```typescript
+// app/services/head-data.ts
 
+import Route from '@ember/routing/route';
 import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
+import { tracked } from '@glimmer/tracking';}
 
 export default class HeadDataService extends Service {
-  @tracked title;
+  @tracked declare title: string;
 }
 ```
 
-### Using the service in head template
+### Using the service in the component
 
-```handlebars
-{{!-- app/templates/head.hbs --}}
+```gts
+// app/services/head-data.gts
 
-<meta property="og:title" content={{this.model.title}} />
+import { service } from '@ember/service';
+import Component from '@glimmer/component';
+
+export default class Head extends Component {
+  @service('head-data') declare model: HeadDataService;
+
+  <template>
+    <meta property="og:title" content={{this.model.title}} />
+  </template>
+}
 ```
 
+### Using the component in the template
+
+```gjs
+// app/templates/application.gts
+
+import { HeadLayout } from 'ember-cli-head';
+import Head from 'app/components/head';
+
+<template>
+  <HeadLayout><Head /></HeadLayout>
+  
+  {{outlet}}
+</template>
+```
 
 ### Checking head tag
 
@@ -145,6 +149,15 @@ module.exports = function(environment) {
 
 If you use `suppressBrowserRender`, the content of `<head>` will be the static FastBoot-rendered content throughout your app's lifecycle.
 
+## Upgrade from 2.x to 3.x
+
+As of 3.x you need `ember-auto-import` installed and configured to use this addon with Ember CLI applications. See the [ember-auto-import](https://github.com/embroider-build/ember-auto-import) documentation for details.
+
+The addon doesn't provide any boilerplate code anymore. You will need to create your own head component and inject the `headData` service.
+
+1. Move your head.hbs template to components.
+2. In your new head component, add `@service headData` injection.
+3. If you don't have head-data service, you will have to create it.
 
 ## Upgrade to 0.4.x
 
