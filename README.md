@@ -154,11 +154,19 @@ Prior to 0.4, the component was appended to the document inside an instance init
 
 In short, if you are upgrading to 0.4.x, you simply add the `<HeadLayout />` component to your application-wide template.
 
+> TODO: Document the package's public API.
+>
+> For each public api (including components, helpers, modifiers, and other apis) include:
+>
+> - The import path for a consumer (e.g. `import MyAddonsComponent from 'my-addon/components/my-addons-component'`)
+> - What it does
+> - Parameters/options
+> - Return value
+> - Example usage
 
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 ## License
 
