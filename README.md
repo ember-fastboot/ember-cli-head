@@ -8,10 +8,9 @@ The hope is that, in the future, Ember will provide a mechanism for populating `
 
 ## Compatibility
 
-* Ember.js v3.28 or above
-* Ember CLI v3.28 or above
-* Node.js v22 or above
-
+- Ember.js v3.28 or above
+- Ember CLI v3.28 or above
+- Node.js v22 or above
 
 ## Installation
 
@@ -26,18 +25,16 @@ ember install ember-cli-head
 Add `<HeadLayout />` to the top of your application template.
 
 ```handlebars
-{{!-- app/templates/application.hbs --}}
+{{! app/templates/application.hbs }}
 
 <HeadLayout />
 
 {{outlet}}
 ```
 
-
 ### Version
 
 Take into account that version >= 0.3 of this addon require Ember 2.10+ and fastboot >=1.0.rc1. Please use 0.2.X if you don't fulfill both requirements.
-
 
 ## Usage
 
@@ -51,7 +48,6 @@ app/templates/head.hbs
 
 The contents of this template will be inserted into the `<head>` element of the page.
 
-
 ### Head data service
 
 The addon provides `model` that is scoped to the `head` template. The `model` is actually an alias of the `head-data` service. You can set whatever data you want to be available to the `head` template on this service.
@@ -60,7 +56,6 @@ The addon provides `model` that is scoped to the `head` template. The `model` is
 
 Because `model` refers to the `head-data` service (and not what a route's `model` hook returns), it is important to use `this.model` (not `@model`) in the `head` template.
 
-
 ## Example
 
 ### Setting content data in route
@@ -68,14 +63,14 @@ Because `model` refers to the `head-data` service (and not what a route's `model
 ```javascript
 // app/routes/application.js
 
-import Route from '@ember/routing/route';
-import { service } from '@ember/service';
+import Route from "@ember/routing/route";
+import { service } from "@ember/service";
 
 export default class ApplicationRoute extends Route {
   @service headData;
 
   afterModel() {
-    this.headData.title = 'Demo App';
+    this.headData.title = "Demo App";
   }
 }
 ```
@@ -85,8 +80,8 @@ export default class ApplicationRoute extends Route {
 ```javascript
 // app/services/head-data.js
 
-import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
+import Service from "@ember/service";
+import { tracked } from "@glimmer/tracking";
 
 export default class HeadDataService extends Service {
   @tracked title;
@@ -96,11 +91,10 @@ export default class HeadDataService extends Service {
 ### Using the service in head template
 
 ```handlebars
-{{!-- app/templates/head.hbs --}}
+{{! app/templates/head.hbs }}
 
 <meta property="og:title" content={{this.model.title}} />
 ```
-
 
 ### Checking head tag
 
@@ -110,16 +104,15 @@ This will result in a document along the lines of:
 <html data-ember-extension="1">
   <head>
     ...
-    <meta name="ember-cli-head-start" content>
-    <meta property="og:title" content="Demo App">
-    <meta name="ember-cli-head-end" content>
+    <meta name="ember-cli-head-start" content />
+    <meta property="og:title" content="Demo App" />
+    <meta name="ember-cli-head-end" content />
   </head>
   <body class="ember-application">
     ...
   </body>
 </html>
 ```
-
 
 ## FastBoot-Only Use
 
@@ -132,11 +125,11 @@ If you don't wish the head content to be "live" when the app runs in browser, yo
 ```javascript
 // config/environment.js
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
-    'ember-cli-head': {
-      suppressBrowserRender: true
-    }
+    "ember-cli-head": {
+      suppressBrowserRender: true,
+    },
   };
 
   return ENV;
@@ -144,7 +137,6 @@ module.exports = function(environment) {
 ```
 
 If you use `suppressBrowserRender`, the content of `<head>` will be the static FastBoot-rendered content throughout your app's lifecycle.
-
 
 ## Upgrade to 0.4.x
 

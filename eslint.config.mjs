@@ -16,7 +16,6 @@ import globals from 'globals';
 import js from '@eslint/js';
 
 import ember from 'eslint-plugin-ember/recommended';
-import WarpDrive from 'eslint-plugin-warp-drive/recommended';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import qunit from 'eslint-plugin-qunit';
 import n from 'eslint-plugin-n';
@@ -39,13 +38,18 @@ export default [
   eslintConfigPrettier,
   ember.configs.base,
   ember.configs.gjs,
-  ...WarpDrive,
   /**
    * Ignores must be in their own object
    * https://eslint.org/docs/latest/use/configure/ignore
    */
   {
-    ignores: ['dist/', 'node_modules/', 'coverage/', '!**/.*'],
+    ignores: [
+      'dist/',
+      'node_modules/',
+      'coverage/',
+      '!**/.*',
+      'fastboot-tests/fixtures/',
+    ],
   },
   /**
    * https://eslint.org/docs/latest/use/configure/configuration-files#configuring-linter-options
@@ -93,6 +97,8 @@ export default [
       '.stylelintrc.js',
       '.template-lintrc.js',
       'ember-cli-build.js',
+      'blueprints/**/*.js',
+      'fastboot-tests/**/*.js',
     ],
     plugins: {
       n,
@@ -122,6 +128,23 @@ export default [
       parserOptions: esmParserOptions,
       globals: {
         ...globals.node,
+      },
+    },
+  },
+
+  {
+    files: ['fastboot-tests/**/*.js'],
+
+    rules: {
+      'n/no-unpublished-require': 'off',
+      'n/no-missing-require': 'off',
+    },
+
+    languageOptions: {
+      //   sourceType: 'script',
+      //   ecmaVersion: 'latest',
+      globals: {
+        ...globals.mocha,
       },
     },
   },
