@@ -25,7 +25,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 22.x
           cache: pnpm
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -46,7 +46,7 @@ jobs:
           version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 22.x
           cache: pnpm
       - name: Install Dependencies
         run: pnpm install --no-lockfile
@@ -86,7 +86,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 22.x
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
       - name: Run Tests
