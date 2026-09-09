@@ -12,6 +12,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.28.0',
+            'ember-cli': '~3.28.0',
             'ember-resolver': '8.1.0',
           },
         },
@@ -21,7 +22,35 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~4.4.0',
+            'ember-cli': '~4.4.0',
             'ember-resolver': '8.1.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-4.8',
+        npm: {
+          devDependencies: {
+            'ember-source': '~4.8.0',
+            'ember-cli': '~4.8.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-4.12',
+        npm: {
+          devDependencies: {
+            'ember-source': '~4.12.0',
+            'ember-cli': '~4.12.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-5.4',
+        npm: {
+          devDependencies: {
+            'ember-source': '~5.4.0',
+            'ember-cli': '~5.4.0',
           },
         },
       },
@@ -30,6 +59,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~5.8.0',
+            'ember-cli': '~5.8.0',
           },
         },
       },
@@ -38,6 +68,34 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~5.12.0',
+            'ember-cli': '~5.12.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-6.4',
+        npm: {
+          devDependencies: {
+            'ember-source': '~6.4.0',
+            'ember-cli': '~6.4.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-6.8',
+        npm: {
+          devDependencies: {
+            'ember-source': '~6.8.0',
+            'ember-cli': '~6.8.0',
+          },
+        },
+      },
+      {
+        name: 'ember-lts-6.12',
+        npm: {
+          devDependencies: {
+            'ember-source': '~6.12.0',
+            'ember-cli': '~6.12.0',
           },
         },
       },
