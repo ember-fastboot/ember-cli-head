@@ -1,0 +1,26 @@
+{
+  "solution": {
+    "ember-cli-head": {
+      "impact": "major",
+      "oldVersion": "2.0.0",
+      "newVersion": "3.0.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2026-09-10)\n\n* ember-cli-head 3.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-cli-head`\n  * [#122](https://github.com/ember-fastboot/ember-cli-head/pull/122) drop support for Ember < 3.28 ([@mansona](https://github.com/mansona))\n  * [#121](https://github.com/ember-fastboot/ember-cli-head/pull/121) drop support for node < 22 ([@mansona](https://github.com/mansona))\n\n#### :rocket: Enhancement\n* `ember-cli-head`\n  * [#120](https://github.com/ember-fastboot/ember-cli-head/pull/120) Add support for Ember 7 ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-cli-head`\n  * [#123](https://github.com/ember-fastboot/ember-cli-head/pull/123) update release-plan ([@mansona](https://github.com/mansona))\n  * [#107](https://github.com/ember-fastboot/ember-cli-head/pull/107) update to v4.12 with ember-cli-update ([@mansona](https://github.com/mansona))\n  * [#115](https://github.com/ember-fastboot/ember-cli-head/pull/115) swap to pnpm ([@mansona](https://github.com/mansona))\n  * [#112](https://github.com/ember-fastboot/ember-cli-head/pull/112) setup release-plan ([@mansona](https://github.com/mansona))\n  * [#105](https://github.com/ember-fastboot/ember-cli-head/pull/105) update ember-auto-import devDependency to v2 ([@mansona](https://github.com/mansona))\n  * [#100](https://github.com/ember-fastboot/ember-cli-head/pull/100) unify CI with the default output of ember addon ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+}
