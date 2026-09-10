@@ -1,5 +1,30 @@
 # Changelog
 
+## Release (2026-09-10)
+
+* ember-cli-head 3.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-cli-head`
+  * [#122](https://github.com/ember-fastboot/ember-cli-head/pull/122) drop support for Ember < 3.28 ([@mansona](https://github.com/mansona))
+  * [#121](https://github.com/ember-fastboot/ember-cli-head/pull/121) drop support for node < 22 ([@mansona](https://github.com/mansona))
+
+#### :rocket: Enhancement
+* `ember-cli-head`
+  * [#120](https://github.com/ember-fastboot/ember-cli-head/pull/120) Add support for Ember 7 ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `ember-cli-head`
+  * [#123](https://github.com/ember-fastboot/ember-cli-head/pull/123) update release-plan ([@mansona](https://github.com/mansona))
+  * [#107](https://github.com/ember-fastboot/ember-cli-head/pull/107) update to v4.12 with ember-cli-update ([@mansona](https://github.com/mansona))
+  * [#115](https://github.com/ember-fastboot/ember-cli-head/pull/115) swap to pnpm ([@mansona](https://github.com/mansona))
+  * [#112](https://github.com/ember-fastboot/ember-cli-head/pull/112) setup release-plan ([@mansona](https://github.com/mansona))
+  * [#105](https://github.com/ember-fastboot/ember-cli-head/pull/105) update ember-auto-import devDependency to v2 ([@mansona](https://github.com/mansona))
+  * [#100](https://github.com/ember-fastboot/ember-cli-head/pull/100) unify CI with the default output of ember addon ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## v2.0.0 (2021-05-26)
 
 #### :boom: Breaking Change
