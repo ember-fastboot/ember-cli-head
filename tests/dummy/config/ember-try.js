@@ -129,8 +129,22 @@ module.exports = async function () {
           },
         },
       },
-      embroiderSafe(),
-      embroiderOptimized(),
+      embroiderSafe({
+        npm: {
+          devDependencies: {
+            'ember-source': '~6.12.0',
+            'ember-cli': '~6.12.0',
+          }
+        }
+      }),
+      embroiderOptimized({
+        npm: {
+          devDependencies: {
+            'ember-source': '~6.12.0',
+            'ember-cli': '~6.12.0',
+          }
+        }
+      }),
       {
         name: 'no-deprecations',
         npm: {
