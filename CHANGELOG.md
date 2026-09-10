@@ -2,6 +2,17 @@
 
 ## Release (2026-09-10)
 
+* ember-cli-head 3.0.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-cli-head`
+  * [#124](https://github.com/ember-fastboot/ember-cli-head/pull/124) fix github repo url ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2026-09-10)
+
 * ember-cli-head 3.0.0 (major)
 
 #### :boom: Breaking Change
