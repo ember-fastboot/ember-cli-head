@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
+    "ember-compatibility-tests": "ember try:each",
     "format": "prettier . --cache --write",
     "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\" --prefixColors auto",
     "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" --prefixColors auto && pnpm format",
@@ -30,8 +31,7 @@
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "concurrently \"pnpm:lint\" \"pnpm:test:*\" --names \"lint,test:\" --prefixColors auto",
-    "test:ember": "ember test",
-    "ember-compatibility-tests": "ember try:each"
+    "test:ember": "ember test"
   },
   "dependencies": {
     "@babel/core": "^7.29.7",
@@ -85,9 +85,10 @@
     "prettier-plugin-ember-template-tag": "^2.1.7",
     "qunit": "^2.26.0",
     "qunit-dom": "^3.6.0",
-    "release-plan": "^0.5.1",
+    "release-plan": "^0.18.0",
     "webpack": "^5.109.2"
   },
+  "packageManager": "pnpm@10.34.4+sha512.8768be55200ae3f2226b6527fcca2687e14bc4e5f12d7721a0f25da3df47915177058648db4177baf348120fa0ba2752d8d8d93f6beaf1fe64ae18da8de961af",
   "engines": {
     "node": ">= 22.13.0"
   },
@@ -99,6 +100,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "packageManager": "pnpm@10.34.4+sha512.8768be55200ae3f2226b6527fcca2687e14bc4e5f12d7721a0f25da3df47915177058648db4177baf348120fa0ba2752d8d8d93f6beaf1fe64ae18da8de961af"
+  }
 }
